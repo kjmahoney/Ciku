@@ -1,0 +1,10 @@
+BRONZE-
+Set up ERD in mongodb
+
+insert user authento
+
+Plan express routes
+
+plan adding angular
+
+plan js functions for quiz
