@@ -1,0 +1,66 @@
+html{
+  margin: 0;
+}
+body{
+  margin: 0;
+   padding: 0;
+   border: 0;
+  text-align: center;
+  background-color: black;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+ul{
+  padding:0;
+}
+.navItem{
+  margin: 0px 10px 0px 0px;
+  list-style: none;
+  padding: 0;
+}
+
+
+#QandA{
+  width:100%;
+  background-color: black;
+}
+
+nav{
+  background-color: black;
+  height: 75px;
+  color: white;
+}
+
+#canvas{
+  background-color: #81D3E1;
+  width: 90%;
+  height: 300px;
+  margin: 0;
+}
+
+#questions{
+  width: 60%;
+  height: 100px;
+  background-color: white;
+  margin: 0px 0px 0px 0px;
+  border: 5px solid black;
+}
+
+#answers{
+  width: 60%;
+  height: 300px;
+  background-color: white;
+}
