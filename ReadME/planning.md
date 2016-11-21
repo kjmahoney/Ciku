@@ -24,6 +24,7 @@ move cube logic inside div
 see if i can send a variable from express into the cube
 2. use authentication
 
-1. Set up express to render an index of decks on a page
-2. insert show pag
-3. Verify that angualr can be used
+1. Set up express to render an index of decks on a page done
+2. convert page to view in angular
+3. Proceed to complete CRUD functionality
+4. Develop Quiz mode

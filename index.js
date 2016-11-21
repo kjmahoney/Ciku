@@ -16,9 +16,8 @@ app.use(express.static("public"));
 app.get("/", (req,res)=>{
   console.log("I used to be like you")
   Deck.find({}).then(decks =>{
-    res.render("index",{
-      decks: decks
-    })
+    res.json(decks)
+    console.log(decks)
   })
 })
 
@@ -30,7 +29,6 @@ app.get("/quiz", (req,res)=>{
     })
   })
 })
-
 
 app.listen(app.get("port"), function(){
   console.log("consequences")
