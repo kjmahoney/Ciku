@@ -1,0 +1,11 @@
+<h2>My Cards</h2>
+
+
+{{#each decks as |deck i|}}
+  <a href="/{{deck.name}}">{{deck.name}}</a>
+  <ul>
+    {{#each deck.cards as |card i|}}
+      <li>{{card.original}} {{card.translation}}</li>
+    {{/each}}
+  </ul>
+{{/each}}

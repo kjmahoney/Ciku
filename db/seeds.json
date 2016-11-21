@@ -1,9 +1,16 @@
 [
 {
-  "deck": "Sea Animals",
+  "name": "Sea Animals",
   "cards": [
     {"original": "鲨鱼", "translation": "shark", "pronounciation": "sha1yu2" , "literal":"" , "context":"" },
     {"original": "鲸", "translation": "whale", "pronounciation": "jing1", "literal":"" , "context":"" }
+]
+},
+{
+  "name": "Arctic Animals",
+  "cards": [
+    {"original": "企鹅", "translation": "penguin", "pronounciation": "qi3'e2" , "literal":"" , "context":"" },
+    {"original": "北极熊", "translation": "polar bear", "pronounciation": "bei3ji2xiong2", "literal":"" , "context":"" }
 ]
 }
 ]
