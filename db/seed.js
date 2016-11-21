@@ -1,10 +1,13 @@
+var mongoose =require('./connection.js')
+var seedData =require('./seeds')
+var models = require('./models')
 
-[
-{
-  "deck": "Sea Animals",
-  "cards": [
-    {"original": "鲨鱼", "translation": "shark", "pronounciation": "sha1yu2" , "literal":"" , "context":"" },
-    {"original": "鲸", "translation": "whale", "pronounciation": "jing1", "literal":"" , "context":"" }
-]
-}
-]
+var Deck = mongoose.model('Deck')
+
+var Card = mongoose.model('Card')
+
+
+Deck.remove({}).then(_=>{
+  Deck.collection.insert(seedData)
+  .then(_=> process.exit())
+}).catch(err=>console.log(err))

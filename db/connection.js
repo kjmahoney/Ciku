@@ -1,6 +1,6 @@
 var mongoose = require("mongoose")
 
-mongoose.connect("mongodb://local-host/project4")
+mongoose.connect("mongodb://localhost/project4")
 
 mongoose.Promise =global.Promise
 

@@ -20,6 +20,7 @@ of the application will seek to leverage external APIs in order to support multi
 
 **Gold**
 * (Gameificiation) A 3D visual representation responds to my progress during a quiz
+* Add a scoring mechanism
 
 **Fratinum**
 * Users can share their decks with other users

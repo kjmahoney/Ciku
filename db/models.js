@@ -1,9 +1,4 @@
-var mongoose = require("./connection")
-
-var DeckSchema = new mongoose.Schema({
-  name: String,
-  cards: [CardSchema],
-})
+var mongoose = require("./connection.js")
 
 var CardSchema = new mongoose.Schema({
   original: String,
@@ -13,7 +8,12 @@ var CardSchema = new mongoose.Schema({
   context: String,
 })
 
+var DeckSchema = new mongoose.Schema({
+  name: String,
+  cards: [CardSchema],
+})
+
 module.exports = {
-  Deck: mongoose.model("Deck",DeckSchema)
-  Card: mongoose.model("Recipe",RecipeSchema)
+  Deck: mongoose.model("Deck",DeckSchema),
+  Card: mongoose.model("Card",CardSchema),
 }
