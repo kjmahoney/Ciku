@@ -1,6 +1,11 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-resource.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+<script src="./js/app.js"></script>
+
 <h2>My Cards</h2>
 
-
+<!-- Loop to display all decks, then second loop to display its cards -->
 {{#each decks as |deck i|}}
   <a href="/{{deck.name}}">{{deck.name}}</a>
   <ul>
