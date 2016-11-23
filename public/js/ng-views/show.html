@@ -1,0 +1,12 @@
+<h2>My Deck</h2>
+
+{{vm.deck.name}}
+
+<div data-ng-repeat="card in vm.deck.cards">
+        {{card.original}}
+        {{card.translation}}
+        {{card.pronounciation}}
+  </div>
+
+
+<a data-ui-sref="index">Back</a>

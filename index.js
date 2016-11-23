@@ -14,15 +14,32 @@ app.use(express.static("public"));
 
 //Route to home/index to display all decks
 app.get("/", (req,res)=>{
-  console.log("I used to be like you")
+  res.render('layout', {})
+})
+
+app.get("/api/decks", (req,res)=>{
+  console.log("Express get")
   Deck.find({}).then(decks =>{
     res.json(decks)
     console.log(decks)
   })
 })
 
+app.get("/api/decks/:name", function(req, res){
+  console.log("show api working")
+  Deck.findOne({name: req.params.name}).then(function(deck){
+    res.json(deck);
+  });
+});
+
+app.post("/api/decks",(req,res)=>{
+  Deck.create(req.body).then(candidate =>{
+    res.json(candidate);
+  })
+})
+
 app.get("/quiz", (req,res)=>{
-  console.log("I used to be like you")
+  console.log("Quiz working")
   Deck.find({}).then(decks =>{
     res.render("quiz",{
       decks: decks
@@ -30,6 +47,7 @@ app.get("/quiz", (req,res)=>{
   })
 })
 
+
 app.listen(app.get("port"), function(){
-  console.log("consequences")
+  console.log("Listening on 4002")
 })
