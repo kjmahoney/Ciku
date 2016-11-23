@@ -7,22 +7,24 @@ angular
   ])
   .config([
     "$stateProvider",
-    Router
+    Router,
   ])
   .factory("DeckFactory",[
     "$resource",
-    DeckFactoryFunction
+    DeckFactoryFunction,
 
   ])
   .controller("indexCtrl", [
     "$state",
     "DeckFactory",
-    indexController
+    indexController,
   ])
   .controller("showCtrl",[
     "$stateParams",
     "DeckFactory",
-    showController])
+    "$state",
+    showController
+  ])
 
   function Router($stateProvider){
     console.log("router working")
@@ -59,8 +61,18 @@ angular
     }
   }
 
-  function showController($stateParams, DeckFactory){
+  function showController($stateParams, DeckFactory, $state){
     console.log("show controller working")
     this.deck = DeckFactory.get({name: $stateParams.name})
     console.log(this.card)
+
+    this.update = function() {
+      this.deck.$update({name: $stateParams.name})
+    }
+
+    this.destroy = function () {
+     this.deck.$delete({name: $stateParams.name}).then(function(){
+       $state.go("index")
+     })
   }
+}

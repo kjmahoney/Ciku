@@ -49,6 +49,19 @@ app.get("/quiz", (req,res)=>{
   })
 })
 
+app.put("/api/decks/:name", function(req, res){
+  Deck.findOneAndUpdate({name: req.params.name}, req.body, {new: true}).then(function(deck){
+    res.json(deck)
+  });
+});
+
+
+app.delete("/api/decks/:name", function(req, res){
+  Deck.findOneAndRemove({name: req.params.name}).then(function(){
+    res.json({ success: true })
+  });
+});
+
 
 app.listen(app.get("port"), function(){
   console.log("Listening on 4002")

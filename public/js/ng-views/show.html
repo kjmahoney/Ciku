@@ -1,6 +1,4 @@
-<h2>My Deck</h2>
-
-{{vm.deck.name}}
+<h2>{{vm.deck.name}}</h2>
 
 <div data-ng-repeat="card in vm.deck.cards">
         {{card.original}}
@@ -8,5 +6,9 @@
         {{card.pronounciation}}
   </div>
 
+<input type="text" ng-model="vm.deck.name" placeholder="Name" />
+<button data-ng-click="vm.update()">Edit Deck Name</button>
+
+<button data-ng-click="vm.destroy()">Delete Deck</button>
 
 <a data-ui-sref="index">Back</a>
