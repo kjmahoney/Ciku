@@ -11,6 +11,7 @@ var app           = express()
 app.set("port", process.env.PORT || 4002)
 app.set("view engine", "hbs")
 app.use(express.static("public"));
+app.use(parser.json({extended:true}));
 
 //Route to home/index to display all decks
 app.get("/", (req,res)=>{
@@ -25,18 +26,19 @@ app.get("/api/decks", (req,res)=>{
   })
 })
 
+app.post("/api/decks",(req,res)=>{
+  Deck.create(req.body).then(deck =>{
+    res.json(deck);
+  })
+})
+
+
 app.get("/api/decks/:name", function(req, res){
   console.log("show api working")
   Deck.findOne({name: req.params.name}).then(function(deck){
     res.json(deck);
   });
 });
-
-app.post("/api/decks",(req,res)=>{
-  Deck.create(req.body).then(candidate =>{
-    res.json(candidate);
-  })
-})
 
 app.get("/quiz", (req,res)=>{
   console.log("Quiz working")

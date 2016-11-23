@@ -12,8 +12,10 @@ angular
   .factory("DeckFactory",[
     "$resource",
     DeckFactoryFunction
+
   ])
-  .controller("indexCtrl",[
+  .controller("indexCtrl", [
+    "$state",
     "DeckFactory",
     indexController
   ])
@@ -47,12 +49,12 @@ angular
 
   function indexController($state, DeckFactory){
     console.log("index controller working")
-    this.decks = DeckFactory.query()
-
-    this.newDeck = new Deck()
-    this.create = function() {
-      this.newDeck.$save().then(_=>{
-        $state.go("index")
+    this.decks = DeckFactory.query();
+    this.newDeck = new DeckFactory()
+    this.create = function(){
+      this.newDeck.$save().then(deck=>{
+        console.log("suc cess")
+        $state.go("index", {}, { reload: true });
       })
     }
   }
