@@ -1,9 +1,19 @@
+
 <h2>{{vm.deck.name}}</h2>
+<input type="text" ng-model="vm.deck.name" placeholder="Name" />
+<button data-ng-click="vm.update()">Edit Deck Name</button>
+
+
 
 <div data-ng-repeat="card in vm.deck.cards">
-        {{card.original}}
-        {{card.translation}}
-        {{card.pronounciation}}
+
+      <div class="column">
+        <div class = "row">
+          <p id = "original" ng-click='showTrans()'>{{card.original}}</p>
+          <p id = "translation">{{card.translation}}</p>
+        </div>
+        <p id = "pronounciation">{{card.pronounciation}}<p>
+      </div>
             <form ng-submit = "vm.updateCard($index, card)">
                 <input type="text" ng-model="card.original" placeholder="card.original">
                 <input type="text" ng-model="card.translation" placeholder="translation">
@@ -15,8 +25,6 @@
             <input ng-click ="vm.deleteCard($index)" type="button" name="" value="Delete">
   </div>
 
-<input type="text" ng-model="vm.deck.name" placeholder="Name" />
-<button data-ng-click="vm.update()">Edit Deck Name</button>
 
 <button data-ng-click="vm.destroy()">Delete Deck</button>
 

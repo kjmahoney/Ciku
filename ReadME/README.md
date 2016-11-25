@@ -1,5 +1,7 @@
 #User Stories
 
+Add ability to add emoji to deck and words
+
 **Who are my customers?**
 This application is targeted for studiers of the Chinese language. The API will only support Chinese translations.  Later editions
 of the application will seek to leverage external APIs in order to support multiple languages.

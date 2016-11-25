@@ -92,11 +92,14 @@ angular
       this.deck.$update({name: $stateParams.name})
   }
 
-
-
-
   this.deleteCard = function(index){
     this.deck.cards.splice(index,1)
     this.deck.$update({name: $stateParams.name})
   }
+
+  $scope.showTrans = function(){
+    console.log("showTrans working")
+  }
+
+  editDeckName = true;
 }
