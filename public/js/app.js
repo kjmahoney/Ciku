@@ -76,7 +76,12 @@ angular
      })
   }
 
+  this.updateCard = function($index, card){
+    this.deck.$update({name: $stateParams.name})
+  }
+
   this.createCard = function(){
+    console.log($scope.original)
     this.deck.cards.push({
       original: $scope.original,
       translation: $scope.translation,
@@ -87,12 +92,7 @@ angular
       this.deck.$update({name: $stateParams.name})
   }
 
-  this.updateCard = function()
 
-  Person.update({'items.id': 2}, {'$set': {
-      'items.$.name': 'updated item2',
-      'items.$.value': 'two updated'
-  }}
 
 
   this.deleteCard = function(index){
