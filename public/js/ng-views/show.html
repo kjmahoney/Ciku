@@ -4,6 +4,16 @@
         {{card.original}}
         {{card.translation}}
         {{card.pronounciation}}
+        {{$index}}
+            <form ng-submit = "vm.updateCard()">
+                <input type="text" ng-model="original" placeholder="original">
+                <input type="text" ng-model="translation" placeholder="translation">
+                <input type="text" ng-model="pronounciation" placeholder="pronounciation">
+                <input type="text" ng-model="literal" placeholder="literal">
+                <input type="text" ng-model="context" placeholder="context">
+                <input type="submit">
+            </form>
+            <input ng-click ="vm.deleteCard($index)" type="button" name="" value="Delete">
   </div>
 
 <input type="text" ng-model="vm.deck.name" placeholder="Name" />
@@ -17,8 +27,6 @@
   <input type="text" ng-model="pronounciation" placeholder="pronounciation">
   <input type="text" ng-model="literal" placeholder="literal">
   <input type="text" ng-model="context" placeholder="context">
-
-
   <input type="submit">
 </form>
 

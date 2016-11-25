@@ -24,8 +24,7 @@ angular
     "DeckFactory",
     "$state",
     "$scope",
-    showController,
-
+    showController
   ])
 
   function Router($stateProvider){
@@ -57,13 +56,12 @@ angular
     this.newDeck = new DeckFactory()
     this.create = function(){
       this.newDeck.$save().then(deck=>{
-        console.log("suc cess")
         $state.go("index", {}, { reload: true });
       })
     }
   }
 
-  function showController($stateParams, DeckFactory, $state, $scope){
+  function showController($stateParams, DeckFactory, $state, $scope, $index){
     console.log("show controller working")
     this.deck = DeckFactory.get({name: $stateParams.name})
 
@@ -72,22 +70,33 @@ angular
       console.log($stateParams.name)
     }
 
-    this.createCard = function(){
-      this.deck.cards.push({
-        original: $scope.original,
-        translation: $scope.translation,
-        pronounciation:$scope.pronounciation,
-        literal:$scope.literal,
-        context:$scope.context,
-      })
-      console.log($scope.original)
-      console.log(this.deck)
-      this.deck.$update({name: $stateParams.name})
-    }
-
     this.destroy = function () {
      this.deck.$delete({name: $stateParams.name}).then(function(){
        $state.go("index")
      })
+  }
+
+  this.createCard = function(){
+    this.deck.cards.push({
+      original: $scope.original,
+      translation: $scope.translation,
+      pronounciation:$scope.pronounciation,
+      literal:$scope.literal,
+      context:$scope.context,
+    })
+      this.deck.$update({name: $stateParams.name})
+  }
+
+  this.updateCard = function()
+
+  Person.update({'items.id': 2}, {'$set': {
+      'items.$.name': 'updated item2',
+      'items.$.value': 'two updated'
+  }}
+
+
+  this.deleteCard = function(index){
+    this.deck.cards.splice(index,1)
+    this.deck.$update({name: $stateParams.name})
   }
 }
