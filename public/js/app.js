@@ -23,7 +23,9 @@ angular
     "$stateParams",
     "DeckFactory",
     "$state",
-    showController
+    "$scope",
+    showController,
+
   ])
 
   function Router($stateProvider){
@@ -61,12 +63,19 @@ angular
     }
   }
 
-  function showController($stateParams, DeckFactory, $state){
+  function showController($stateParams, DeckFactory, $state, $scope){
     console.log("show controller working")
     this.deck = DeckFactory.get({name: $stateParams.name})
-    console.log(this.card)
 
     this.update = function() {
+      this.deck.$update({name: $stateParams.name})
+      console.log($stateParams.name)
+    }
+
+    this.createCard = function(){
+      this.deck.cards.push({original: $scope.original})
+      console.log($scope.original)
+      console.log(this.deck)
       this.deck.$update({name: $stateParams.name})
     }
 
