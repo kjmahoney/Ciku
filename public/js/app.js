@@ -73,7 +73,13 @@ angular
     }
 
     this.createCard = function(){
-      this.deck.cards.push({original: $scope.original})
+      this.deck.cards.push({
+        original: $scope.original,
+        translation: $scope.translation,
+        pronounciation:$scope.pronounciation,
+        literal:$scope.literal,
+        context:$scope.context,
+      })
       console.log($scope.original)
       console.log(this.deck)
       this.deck.$update({name: $stateParams.name})

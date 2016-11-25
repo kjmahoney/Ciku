@@ -12,7 +12,13 @@
 <button data-ng-click="vm.destroy()">Delete Deck</button>
 
 <form ng-submit = "vm.createCard()">
-  <input type="text" ng-model="original" placeholder="original" name ="original">
+  <input type="text" ng-model="original" placeholder="original">
+  <input type="text" ng-model="translation" placeholder="translation">
+  <input type="text" ng-model="pronounciation" placeholder="pronounciation">
+  <input type="text" ng-model="literal" placeholder="literal">
+  <input type="text" ng-model="context" placeholder="context">
+
+
   <input type="submit">
 </form>
 
