@@ -97,9 +97,6 @@ angular
     this.deck.$update({name: $stateParams.name})
   }
 
-  $scope.showTrans = function(){
-    console.log("showTrans working")
-  }
-
-  editDeckName = true;
+  showTran = false;
+  editTitle = false;
 }

@@ -1,19 +1,28 @@
+<!-- Deck Header -->
+<h2 id="deckName" ng-hide="editTitle.toggle" ng-click="editTitle.toggle=true">{{vm.deck.name}}</h2>
 
-<h2>{{vm.deck.name}}</h2>
-<input type="text" ng-model="vm.deck.name" placeholder="Name" />
-<button data-ng-click="vm.update()">Edit Deck Name</button>
+  <!-- edit deck name -->
+  <div class = "column">
+    <input ng-if="editTitle.toggle" type="text" ng-model="vm.deck.name" placeholder="Name"/>
+    <p id="deckName" ng-if="editTitle.toggle" ng-click="vm.update(); editTitle.toggle=false">Edit Deck Name</p>
+  <div>
+
+  <!-- hide and show translations -->
+  <button ng-click= "showTran.toggle=true" ng-hide = "showTran.toggle" type="button">Show Translations</button>
+  <button ng-click= "showTran.toggle=false" ng-if = "showTran.toggle" type="button">Hide Translations</button>
 
 
-
+<!-- Deck Body -->
 <div data-ng-repeat="card in vm.deck.cards">
 
+      <!-- display cards -->
       <div class="column">
         <div class = "row">
-          <p id = "original" ng-click='showTrans()'>{{card.original}}</p>
-          <p id = "translation">{{card.translation}}</p>
-        </div>
-        <p id = "pronounciation">{{card.pronounciation}}<p>
+          <p id = "original" ng-mouseover="showTran.toggle=true" ng-mouseleave="showTran.toggle=false"  ng-click='showTrans()'>{{card.original}}</p>
+          <p id = "pronounciation" ng-if="showTran.toggle">{{card.pronounciation}}<p>
+          <p id = "translation" ng-if="showTran.toggle">{{card.translation}}</p>
       </div>
+            <!-- edit a card -->
             <form ng-submit = "vm.updateCard($index, card)">
                 <input type="text" ng-model="card.original" placeholder="card.original">
                 <input type="text" ng-model="card.translation" placeholder="translation">
@@ -22,12 +31,16 @@
                 <input type="text" ng-model="card.context" placeholder="context">
                 <input type="submit">
             </form>
+
+            <!-- delete a card -->
             <input ng-click ="vm.deleteCard($index)" type="button" name="" value="Delete">
+    </div>
   </div>
 
-
+<!-- delete the deck -->
 <button data-ng-click="vm.destroy()">Delete Deck</button>
 
+<!-- create a card -->
 <form ng-submit = "vm.createCard()">
   <input type="text" ng-model="original" placeholder="original">
   <input type="text" ng-model="translation" placeholder="translation">
@@ -37,4 +50,5 @@
   <input type="submit">
 </form>
 
+<!-- back to index -->
 <a data-ui-sref="index">Back</a>

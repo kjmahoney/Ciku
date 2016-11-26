@@ -1,0 +1,19 @@
+#deckName{
+  color: white;
+}
+
+#deckName:hover{
+  color: red;
+}
+
+#original{
+  font-size: 20px;
+}
+
+#translation{
+  color: orange;
+}
+
+#pronounciation{
+  color: red;
+}
