@@ -99,4 +99,5 @@ angular
 
   showTran = false;
   editTitle = false;
+  editCard = false;
 }
