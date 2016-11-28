@@ -1,6 +1,8 @@
 #User Stories
 
+Scope Creep
 Add ability to add emoji to deck and words
+Flex wrap the index and show page
 
 **Who are my customers?**
 This application is targeted for studiers of the Chinese language. The API will only support Chinese translations.  Later editions
@@ -18,6 +20,7 @@ of the application will seek to leverage external APIs in order to support multi
 *  When reviewing a phrase, I should be able to click on a word and have its individual translation appear
 * (APIs) When creating a new word, its translation should auto populate
 * I should be able to search for a character from the home page, then add it to my list.
+* Show page for individual cards?
 
 
 **Gold**

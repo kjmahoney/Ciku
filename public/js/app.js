@@ -26,6 +26,13 @@ angular
     "$scope",
     showController
   ])
+  .controller("quizCtrl",[
+    "$stateParams",
+    "DeckFactory",
+    "$state",
+    "$scope",
+    quizController
+  ])
 
   function Router($stateProvider){
     console.log("router working")
@@ -40,6 +47,12 @@ angular
       url:"/decks/:name",
       templateUrl:"./js/ng-views/show.html",
       controller:"showCtrl",
+      controllerAs:"vm"
+    })
+    .state("quiz",{
+      url:"/decks/:name/quiz",
+      templateUrl:"./js/ng-views/quiz.html",
+      controller:"quizCtrl",
       controllerAs:"vm"
     })
   }
@@ -96,8 +109,14 @@ angular
     this.deck.cards.splice(index,1)
     this.deck.$update({name: $stateParams.name})
   }
-
+  newCard = false;
   showTran = false;
   editTitle = false;
   editCard = false;
+}
+
+function quizController($stateParams, DeckFactory, $state, $scope, $index){
+  console.log("quiz working")
+  this.deck = DeckFactory.get({name: $stateParams.name})
+  console.log(this.deck)
 }

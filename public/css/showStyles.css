@@ -19,14 +19,37 @@ body{
   margin: 0px 0px 0px 0px;
 }
 
+#originalBox{
+  font-size: 24px;
+  margin: 0px 0px 0px 0px;
+  width: 80px;
+}
+
 #translation{
   color: orange;
   font-size: 20px;
+  margin: 0px 0px 45px 10px;
+}
+
+#translationBox{
+  color: orange;
+  font-size: 20px;
   margin: 0px 0px 0px 10px;
+  width: 80px;
+
+  /*background-color: #2BABF0;*/
+
 }
 
 #pronounciation{
   margin: 0px 0px 0px 0px;
   color: red;
   font-size: 12px;
+}
+
+#pronounciationBox{
+  margin: 0px 0px 0px 0px;
+  color: red;
+  font-size: 12px;
+  width: 80px;
 }

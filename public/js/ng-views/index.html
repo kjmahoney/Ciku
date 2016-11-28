@@ -3,9 +3,9 @@
 <h3 data-ng-repeat="deck in vm.decks">
 
   <a data-ui-sref="show({name: deck.name})">{{deck.name}}</a>
-  <div data-ng-repeat="card in deck.cards">
+  <!-- <div data-ng-repeat="card in deck.cards">
           {{card.original}}
-    </div>
+    </div> -->
 </h3>
 
 <form ng-submit="vm.create()">
