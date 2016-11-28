@@ -1,30 +1,16 @@
-var word = "Kevin"
-var array = word.split("").reverse().join(",")
+//Render a random character from the deck onto the page
+//Find a way to capture a value from the input box
+//Use quiz functionality to compare these
 
+//Create score keeping functionality
 
-var deck = {
-  name: "Animals",
-  cards:[{
-    original: "狗",
-    translation: "dog",
-    correct: false,
-  },{
-    original: "猫",
-    translation: "cat",
-    correct: false,
-  },{
-    original: "牛",
-    translation: "cow",
-    correct: false,
-  },
-]
-}
+//fix links between pages
 
 //Constant variables
-
 let answerBox =document.getElementById('answerBox')
 let submitButton =document.getElementById('submitButton')
 let questionBox = document.getElementById('questionBox')
+
 
 quiz = function(){
   question = deck.cards[Math.floor(Math.random() * deck.cards.length)]

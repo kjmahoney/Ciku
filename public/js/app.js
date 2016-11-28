@@ -117,6 +117,37 @@ angular
 
 function quizController($stateParams, DeckFactory, $state, $scope, $index){
   console.log("quiz working")
-  this.deck = DeckFactory.get({name: $stateParams.name})
-  console.log(this.deck)
+  this.deckers = DeckFactory.get({name: $stateParams.name})
+  this.deck = DeckFactory.get({name: $stateParams.name}).$promise.then(response =>{
+    this.deckCards = response.cards
+    turkeyDuck = this.deckCards[1].original
+  })
+
+    this.startQuiz = function(){
+      let question = this.deckers.cards[Math.floor(Math.random() * this.deckers.cards.length)]
+      $scope.query = question.original
+      $scope.answer = question.translation
+    }
+
+
+    this.answerQuestion = function(){
+      console.log($scope.userAnswer)
+      if ($scope.userAnswer == $scope.answer){
+        console.log("correct")
+        let question = this.deckers.cards[Math.floor(Math.random() * this.deckers.cards.length)]
+        $scope.query = question.original
+        $scope.answer = question.translation
+      }else{
+        console.log("incorrect")
+      }
+    }
+
+
+    this.quizQuestion = function(){
+      console.log(this.deckers.cards[Math.floor(Math.random() * this.deckers.cards.length)].original)
+      $scope.grapes = this.deckers.cards[Math.floor(Math.random() * this.deckers.cards.length)].original
+    }
+
+
+
 }
