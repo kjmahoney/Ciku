@@ -128,7 +128,7 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
       $scope.query = question.original
       $scope.answer = question.translation
     }
-
+      $scope.score = 0
 
     this.answerQuestion = function(){
       console.log($scope.userAnswer)
@@ -137,17 +137,11 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
         let question = this.deckers.cards[Math.floor(Math.random() * this.deckers.cards.length)]
         $scope.query = question.original
         $scope.answer = question.translation
+        $scope.score += 1
       }else{
         console.log("incorrect")
+        $scope.score -= 1
       }
     }
-
-
-    this.quizQuestion = function(){
-      console.log(this.deckers.cards[Math.floor(Math.random() * this.deckers.cards.length)].original)
-      $scope.grapes = this.deckers.cards[Math.floor(Math.random() * this.deckers.cards.length)].original
-    }
-
-
 
 }
