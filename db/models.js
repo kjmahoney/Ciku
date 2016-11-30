@@ -6,6 +6,7 @@ var CardSchema = new mongoose.Schema({
   pronounciation: String,
   literal: String,
   context: String,
+  learned: Boolean,
 })
 
 var DeckSchema = new mongoose.Schema({
