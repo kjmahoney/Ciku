@@ -4,10 +4,29 @@ html {
 
 body{
   text-align: center;
-  background: linear-gradient(#2BABF0, #16C9FC);
+  background: linear-gradient(white, #A5DBDB);
   background-size: cover;
+  color: black;
+}
+
+header{
+  background-color: #FD6900;
+  height: 10%;
+  width: 100%;
+}
+
+a{
+  color: #002F9C;
+}
+
+h1{
   color: white;
 }
+
+h2{
+  color: #22C3E9;
+}
+
 .column{
   display: flex;
   flex-direction: column;

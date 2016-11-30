@@ -1,5 +1,8 @@
+<div id="showNav"></div>
+
 <!-- Deck Header -->
 <h2 id="deckName" ng-hide="editTitle.toggle" ng-click="editTitle.toggle=true">{{vm.deck.name}}</h2>
+
 
   <!-- edit deck name -->
   <div class = "column">
@@ -8,9 +11,10 @@
   </div>
 
   <!-- hide and show translations -->
-  <p ng-click= "showTran.toggle=false" ng-if = "showTran.toggle" type="button">Show Translations</p>
-  <p ng-click= "showTran.toggle=true" ng-hide = "showTran.toggle" type="button">Hide Translations</p>
-
+  <div id = "hideTranButton">
+    <p ng-click= "showTran.toggle=false" ng-if = "showTran.toggle" type="button">Show Translations</p>
+    <p ng-click= "showTran.toggle=true" ng-hide = "showTran.toggle" type="button">Hide Translations</p>
+  </div>
 
 <!-- Deck Body -->
 <div data-ng-repeat="card in vm.deck.cards" id ="card">
@@ -26,12 +30,12 @@
             <input id = 'originalBox' ng-if = "editCard.toggle" type="text" ng-model="card.original" placeholder="card.original">
 
             <p id = "pronounciation" ng-if="!showTran.toggle" ng-hide = "editCard.toggle">{{card.pronounciation}}<p>
-            <input id = "pronounciationBox" type="text" ng-model="card.pronounciation" placeholder="translation" ng-if ="showTran.toggle && editCard.toggle">
+            <input id = "pronounciationBox" type="text" ng-model="card.pronounciation" placeholder="translation" ng-if ="!showTran.toggle && editCard.toggle">
 
           </div>
 
             <p id = "translation" ng-if="!showTran.toggle" ng-hide = "editCard.toggle">{{card.translation}}</p>
-            <input id = "translationBox" type="text" ng-model="card.translation" placeholder="pronounciation" ng-if ="showTran.toggle && editCard.toggle">
+            <input id = "translationBox" type="text" ng-model="card.translation" placeholder="pronounciation" ng-if ="!showTran.toggle && editCard.toggle">
 
         </div>
 

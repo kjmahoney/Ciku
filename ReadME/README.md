@@ -3,6 +3,7 @@
 Scope Creep
 Add ability to add emoji to deck and words
 Flex wrap the index and show page
+Deck mastery score=> bronze is boolean value, gold is score
 
 **Who are my customers?**
 This application is targeted for studiers of the Chinese language. The API will only support Chinese translations.  Later editions

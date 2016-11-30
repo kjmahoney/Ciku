@@ -121,28 +121,34 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
   this.deck = DeckFactory.get({name: $stateParams.name})
   DeckFactory.get({name: $stateParams.name}).$promise.then(response => this.deck.cards = response.cards)
 
+  $scope.score = 0
 
     this.startQuiz = function(){
-      let question = this.deck.cards[Math.floor(Math.random() * this.deck.cards.length)]
+      quizArray = this.deck.cards
+      let question = quizArray[Math.floor(Math.random() * quizArray.length)]
       $scope.query = question.original
       $scope.answer = question.translation
     }
-      $scope.score = 0
 
     this.answerQuestion = function(){
       console.log($scope.userAnswer)
       if ($scope.userAnswer.toUpperCase() == $scope.answer.toUpperCase()){
         console.log("correct")
-        let question = this.deck.cards[Math.floor(Math.random() * this.deck.cards.length)]
+        let question = quizArray[Math.floor(Math.random() * quizArray.length)]
         $scope.query = question.original
         $scope.answer = question.translation
         $scope.score += 1
+        quizArray.pop(quizArray.indexOf(question))
         speed = ($scope.score/10)
+          if (quizArray.length == 0){
+            alert("You've finished the deck!")
+          }
       }else{
         console.log("incorrect")
         $scope.score -= 1
         speed = 0
       }
     }
-
 }
+
+//
