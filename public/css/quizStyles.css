@@ -1,12 +1,20 @@
 html{
   margin: 0;
 }
+
+#myCanvas{
+  background: red;
+  width: 800px;
+  height: 400px;
+}
+
 body{
   margin: 0;
    padding: 0;
    border: 0;
   text-align: center;
   background-color: black;
+  overflow: hidden;
 }
 
 .column{
@@ -32,7 +40,6 @@ ul{
   padding: 0;
 }
 
-
 #QandA{
   width:100%;
   background-color: black;
@@ -44,11 +51,8 @@ nav{
   color: white;
 }
 
-#canvas{
-  background-color: #81D3E1;
-  width: 90%;
-  height: 400px;
-  margin: 0;
+#world{
+
 }
 
 #questions{

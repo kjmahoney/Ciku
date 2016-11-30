@@ -3,24 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title>Quiz</title>
-
-
   </head>
   <body>
+
     <h4>Quiz</h4>
 
+    <canvas id="myCanvas"></canvas>
+
+    <!-- Interface for quiz -->
     <p>{{score}}</p>
     <div id = "questionBox">{{query}}</div>
-    <div id = "answerBox">{{answer}}</div>
 
     <button ng-click = "vm.startQuiz()" type="button" name="button">Start Quiz</button>
 
     <form ng-submit = "vm.answerQuestion()" >
       <input id ="answerBox" ng-model= "userAnswer" type="text" name="name" value="vm.userAnswer">
-      <button type="submit" name="button"></button>
+      <button type="submit" name="button">Submit</button>
     </form>
 
-    <a data-ui-sref="index">Back</a>
-    <script src="./js/quiz.js"></script>
+    <a data-ui-sref="show({name: vm.deck.name})">Back</a>
+
+
+
   </body>
 </html>

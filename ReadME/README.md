@@ -31,6 +31,7 @@ of the application will seek to leverage external APIs in order to support multi
 * Users can share their decks with other users
 * Users can import their decks via csv
 * (External API) Expand to include other languages
+* Complicate the game!
 
 Technologies Used:
 [logo]: MEAN.jpg "Logo Title Text 2"

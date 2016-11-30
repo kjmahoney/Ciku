@@ -117,14 +117,13 @@ angular
 
 function quizController($stateParams, DeckFactory, $state, $scope, $index){
   console.log("quiz working")
-  this.deckers = DeckFactory.get({name: $stateParams.name})
-  this.deck = DeckFactory.get({name: $stateParams.name}).$promise.then(response =>{
-    this.deckCards = response.cards
-    turkeyDuck = this.deckCards[1].original
-  })
+  init()
+  this.deck = DeckFactory.get({name: $stateParams.name})
+  DeckFactory.get({name: $stateParams.name}).$promise.then(response => this.deck.cards = response.cards)
+
 
     this.startQuiz = function(){
-      let question = this.deckers.cards[Math.floor(Math.random() * this.deckers.cards.length)]
+      let question = this.deck.cards[Math.floor(Math.random() * this.deck.cards.length)]
       $scope.query = question.original
       $scope.answer = question.translation
     }
@@ -132,15 +131,17 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
 
     this.answerQuestion = function(){
       console.log($scope.userAnswer)
-      if ($scope.userAnswer == $scope.answer){
+      if ($scope.userAnswer.toUpperCase() == $scope.answer.toUpperCase()){
         console.log("correct")
-        let question = this.deckers.cards[Math.floor(Math.random() * this.deckers.cards.length)]
+        let question = this.deck.cards[Math.floor(Math.random() * this.deck.cards.length)]
         $scope.query = question.original
         $scope.answer = question.translation
         $scope.score += 1
+        speed = ($scope.score/10)
       }else{
         console.log("incorrect")
         $scope.score -= 1
+        speed = 0
       }
     }
 
