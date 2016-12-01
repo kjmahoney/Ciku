@@ -1,19 +1,11 @@
 angular.module("cards")
-.factory("Deck",[
+.factory("DeckFactory",[
   "$resource",
-  Callback,
+  DeckFactoryFunction,
 ])
 
-
-function Callback($resource){
-  // return {
-  //   hello(){
-  //     console.log("hello world")
-  //   }
-  //
-  // }
-
-  $resource("/api/decks/:name", {}, {
+function DeckFactoryFunction($resource){
+  return $resource("/api/decks/:name", {}, {
     update: { method: "PUT" }
   });
 }

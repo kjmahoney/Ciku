@@ -4,7 +4,7 @@
   <!-- edit deck name -->
   <div class = "column">
     <input ng-if="editTitle.toggle" type="text" ng-model="vm.deck.name" placeholder="Name"/>
-    <p id="deckName" ng-if="editTitle.toggle" ng-click="vm.update(); editTitle.toggle=false">Edit Deck Name</p>
+    <p id="deckName" ng-if="editTitle.toggle" ng-click="vm.updateDeck(); editTitle.toggle=false">Edit Deck Name</p>
   </div>
 
 
