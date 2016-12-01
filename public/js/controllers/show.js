@@ -10,7 +10,6 @@ angular
 
 function showController($stateParams, DeckFactory, $state, $scope, $index){
   this.deck = DeckFactory.get({name: $stateParams.name}, (res)=>{
-    cards = this.deck.cards
     this.percentLearned()
   })
 

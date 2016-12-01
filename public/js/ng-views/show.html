@@ -1,5 +1,5 @@
 <nav id="showNav" class= "row">
-  <a data-ui-sref="index">Home</a>
+  <p data-ui-sref="index">Home</p>
   <a data-ui-sref="quiz({name: vm.deck.name})">Quiz!</a>
   <p>Help</p>
 </nav>
@@ -71,6 +71,6 @@
 </form>
 
 <!-- delete the deck -->
-<button data-ng-click="vm.destroy()">Delete Deck</button>
+<button class="blueButton" data-ng-click="vm.destroy()">Delete Deck</button>
 
 <!-- back to index -->

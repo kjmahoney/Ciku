@@ -45,7 +45,6 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
       //update changes in database
       this.deck.$update({name: $stateParams.name})
 
-
       //reset for next question
       randomNumber = Math.floor(Math.random() * quizArray.length)
       question = quizArray[randomNumber]

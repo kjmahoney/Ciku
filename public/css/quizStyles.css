@@ -1,69 +1,20 @@
-html{
+body{
   margin: 0;
+  padding: 0;
+  border: 0;
+  text-align: center;
+  background-color: black;
 }
 
 #myCanvas{
   background: red;
-  width: 800px;
-  height: 400px;
+  width: 600px;
+  height: 250px;
 }
 
-body{
-  margin: 0;
-   padding: 0;
-   border: 0;
-  text-align: center; 
-  background-color: black;
-}
-
-.column{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.row{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-ul{
-  padding:0;
-}
-.navItem{
-  margin: 0px 10px 0px 0px;
-  list-style: none;
-  padding: 0;
-}
-
-#QandA{
-  width:100%;
-  background-color: black;
-}
-
-nav{
-  background-color: black;
-  height: 75px;
-  color: white;
-}
-
-#world{
-
-}
-
-#questions{
-  width: 40%;
-  height: 80px;
-  background-color: white;
-  margin: 0px 0px 0px 0px;
-  border: 5px solid black;
-}
-
-#answers{
-  width: 60%;
-  height: 220px;
-  background-color: white;
+#quizBox{
+  /*background-color: white;*/
+  width: 600px;
+  height: 300px;
+  margin: -100px 0px 0px 0px;
 }

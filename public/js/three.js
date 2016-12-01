@@ -17,11 +17,11 @@ function init(){
   //Render Shapes
   var renderer = new THREE.WebGLRenderer({canvas: document.getElementById("myCanvas"), antialias:true});
   //set the default color of the scene
-  renderer.setClearColor(0xF4AB7B);
+  renderer.setClearColor(0xDFC39A);
   //sets pixel ratio
   renderer.setPixelRatio(window.devicePixelRatio);
   //set size of canvas
-  renderer.setSize(800 ,400);
+  renderer.setSize(600 ,300);
 
 
   //parameters: Field of view, aspect ratio, near, far = tihings too close or far no longer re render
@@ -38,7 +38,7 @@ function init(){
   scene.add(lightPoint)
 
   //defines each side of the shape
-  var geometry = new THREE.CubeGeometry(100,100,100)
+  var geometry = new THREE.CubeGeometry(80,80,80)
   //draws on the sides of the cubes
   var material = new THREE.MeshNormalMaterial({
     color: 0xF3FFE2,

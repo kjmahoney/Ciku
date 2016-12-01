@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  margin: 0;
 }
 
 body{
@@ -7,8 +8,12 @@ body{
   background: linear-gradient(white, #A5DBDB);
   background-size: cover;
   color: black;
+  background-color: #0D9AFF;
+  background-size: 150%;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
-
 
 header{
   /*background-image: url("http://www.freewebheaders.com/wordpress/wp-content/gallery/global/world-business-header.jpg");*/
@@ -22,6 +27,26 @@ header{
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-end;
+}
+
+#showNav{
+  height: 50px;
+  width: 100%;
+  background-color: #DEBF99;
+}
+
+/*.navItem{
+  color: #002A9F;
+  margin:0px 20px 0px 0px;
+}*/
+
+#showNav>*{
+  color: #002A9F;
+  margin:0px 20px 0px 0px;
+}
+
+#showNav>*:visited {
+    color: #002A9F;
 }
 
 #title{
