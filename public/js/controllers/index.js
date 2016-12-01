@@ -16,4 +16,7 @@ function indexController($state, DeckFactory){
       $state.go("index", {}, { reload: true });
     })
   }
+
+  showField = false
+
 }

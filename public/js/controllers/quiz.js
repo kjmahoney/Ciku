@@ -39,7 +39,9 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
 
       if (quizArray.length == 0){
         alert("You've finished the deck!")
-      }
+        $state.go("show", {name: $stateParams.name})
+      }else{
+
       //update changes in database
       this.deck.$update({name: $stateParams.name})
 
@@ -49,7 +51,7 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
       question = quizArray[randomNumber]
       $scope.query = question.original
       $scope.answer = question.translation
-
+    }
     }else{
       console.log("incorrect")
       //Set learned status of card to false and update database
@@ -61,11 +63,13 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
       quizArray.splice(quizArray.indexOf(question),1)
       if (quizArray.length == 0){
         alert("You've finished the deck!")
-      }
+        $state.go("show", {name: $stateParams.name})
+      }else{
       randomNumber = Math.floor(Math.random() * quizArray.length)
       question = quizArray[randomNumber]
       $scope.query = question.original
-      $scope.answer = question.translation
+      $scope.answer = question.translatio
+    }
     }
 
   }
