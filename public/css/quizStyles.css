@@ -7,14 +7,43 @@ body{
 }
 
 #myCanvas{
-  background: red;
-  width: 600px;
-  height: 250px;
+  width: 300px;
+  height: 100px;
+  border-radius: 25px;
 }
 
 #quizBox{
-  /*background-color: white;*/
   width: 600px;
   height: 300px;
   margin: -100px 0px 0px 0px;
+}
+
+#questionBox{
+  font-size: 32px;
+  margin: 20px 0px 10px 0px;
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  border-radius: 25px;
+  text-align: center;
+}
+
+#answerBox{
+  border-radius: 25px;
+  height: 50px;
+  width: auto;
+  text-align: center;
+  font-size: 16px;
+}
+
+.quizHeader{
+  margin: 10px 30px -10px 30px;
+}
+.quizFooter{
+  margin: -10px 0px -20px 0px;
+  height: 50px;
+  width: 100%;
+}
+.quizFooter>p{  
+  font-size: 12px;
 }

@@ -1,27 +1,17 @@
 
+
 function init(){
   //Click Functionality_______________
-  speed = 0.1
+  speed = 0.0
 
-  clicker = function(){
-    speed = speed + 0.01
-    let answer = answers[Math.floor((Math.random() * 2))]
-    console.log(speed)
-  }
-
-  stopClicker = function(){
-    speed = 0
-  }
-
-  var answers= ["yes", "no"]
   //Render Shapes
   var renderer = new THREE.WebGLRenderer({canvas: document.getElementById("myCanvas"), antialias:true});
   //set the default color of the scene
-  renderer.setClearColor(0xDFC39A);
+  renderer.setClearColor(0xE7DCC8);
   //sets pixel ratio
   renderer.setPixelRatio(window.devicePixelRatio);
   //set size of canvas
-  renderer.setSize(600 ,300);
+  renderer.setSize(500,250);
 
 
   //parameters: Field of view, aspect ratio, near, far = tihings too close or far no longer re render
@@ -38,10 +28,10 @@ function init(){
   scene.add(lightPoint)
 
   //defines each side of the shape
-  var geometry = new THREE.CubeGeometry(80,80,80)
+  var geometry = new THREE.CubeGeometry(150,150,150)
   //draws on the sides of the cubes
   var material = new THREE.MeshNormalMaterial({
-    color: 0xF3FFE2,
+    color: 0x0D9AFF,
     wireframe: false
   });
   //enter variables into mesh

@@ -14,8 +14,9 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
   this.deck = DeckFactory.get({name: $stateParams.name})
   DeckFactory.get({name: $stateParams.name}).$promise.then(response => this.deck.cards = response.cards)
   $scope.score = 0
-
+  // $scope.query = "Click screen above to begin"
   this.startQuiz = function(){
+    speed = 0.01
     let placeHolderArray = []
     quizArray = placeHolderArray.concat(this.deck.cards)
     randomNumber = Math.floor(Math.random() * quizArray.length)
@@ -72,4 +73,5 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
     }
 
   }
+  hideFooter=false
 }

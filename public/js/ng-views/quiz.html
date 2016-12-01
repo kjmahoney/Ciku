@@ -11,20 +11,32 @@
     <a data-ui-sref="show({name: vm.deck.name})">Back</a>
     <p>Help</p>
   </nav>
-  <p>{{score}}</p>
 
-  <canvas id="myCanvas"></canvas>
+  <div class = "row">
+  <div class = "quizHeader">
+    <p>Session Score: {{score}}</p>
+  </div>
+  <div class = "quizHeader">
+  </div>
+  <div class = "quizHeader">
+    <p>Session Score: {{score}}</p>
+  </div>
+</div>
+
+  <canvas ng-click = "vm.startQuiz(); hideFooter.toggle=true" id="myCanvas"></canvas>
 
   <!-- Interface for quiz -->
-
-  <div id="quizBox" class="column">
-  <div id = "questionBox">{{query}}</div>
-  <button ng-click = "vm.startQuiz()" type="button" name="button">Start Quiz</button>
-
   <form ng-submit = "vm.answerQuestion()">
+    <div class= "quizFooter">
+    <p ng-hide="hideFooter.toggle">Click screen above to begin</p>
+    <p ng-show="hideFooter.toggle"></p>
+    </div>
+    <div id="quizBox" class="column">
+    <div id = "questionBox">{{query}}</div>
     <div class="column">
+      Translation:
       <input id ="answerBox" ng-model= "userAnswer" type="text" name="name" value="vm.userAnswer">
-      <button type="submit" name="button">Submit</button>
+      <button class = "blueButton" type="submit" name="button">Submit</button>
     </div>
   </form>
 
