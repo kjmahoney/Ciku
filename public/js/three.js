@@ -48,7 +48,6 @@ function init(){
   var mesh = new THREE.Mesh(geometry,material)
   mesh.position.set(0,0,-1000) //change default here so that camera isnt on the mesh
 
-
   scene.add(mesh);
 
   //set up a render loop

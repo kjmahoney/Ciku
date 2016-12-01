@@ -1,5 +1,3 @@
-console.log("app.js connected")
-//set up factory link, figure out why this page isn't being found
 angular
 .module("cards", [
   "ui.router",

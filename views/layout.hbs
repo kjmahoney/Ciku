@@ -4,13 +4,17 @@
     <meta charset="utf-8">
     <title>Cards</title>
 
-<!-- scripts for angular -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-resource.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r79/three.js"></script>
 
     <script src="./js/app.js"></script>
+    <script src="./js/controllers/index.js"></script>
+    <script src="./js/controllers/quiz.js"></script>
+    <script src="./js/controllers/show.js"></script>
+    <script src="./js/factories/deck.js"></script>
+    <script src="./js/three.js"></script>
 
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/showStyles.css">
@@ -22,15 +26,11 @@
       <h1>CiKu</h1>
     </header>
 
-
     <div>
       <main data-ui-view></main>
     </div>
-    <script src="./js/three.js"></script>
-    <script src="./js/quiz.js"></script>
-    <script src="./js/show.js"></script>
-    <script src="./js/index.js"></script>
-    <script src="./js/factories/deck.js"></script>
+
+
   </body>
 
 </html>
