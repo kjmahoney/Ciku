@@ -1,3 +1,9 @@
+<nav id="showNav" class= "row">
+  <a data-ui-sref="index">Home</a>
+  <a data-ui-sref="quiz({name: vm.deck.name})">Quiz!</a>
+  <p>Help</p>
+</nav>
+
 <!-- Deck Header -->
 <h2 id="deckName" ng-hide="editTitle.toggle" ng-click="editTitle.toggle=true">{{vm.deck.name}}</h2>
 
@@ -68,6 +74,3 @@
 <button data-ng-click="vm.destroy()">Delete Deck</button>
 
 <!-- back to index -->
-<a data-ui-sref="index">Back</a>
-
-<a data-ui-sref="quiz({name: vm.deck.name})">Quiz</a>
