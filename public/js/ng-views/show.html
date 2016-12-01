@@ -1,8 +1,5 @@
-<div id="showNav"></div>
-
 <!-- Deck Header -->
 <h2 id="deckName" ng-hide="editTitle.toggle" ng-click="editTitle.toggle=true">{{vm.deck.name}}</h2>
-
 
   <!-- edit deck name -->
   <div class = "column">
@@ -10,11 +7,14 @@
     <p id="deckName" ng-if="editTitle.toggle" ng-click="vm.update(); editTitle.toggle=false">Edit Deck Name</p>
   </div>
 
+
   <!-- hide and show translations -->
   <div id = "hideTranButton">
     <p ng-click= "showTran.toggle=false" ng-if = "showTran.toggle" type="button">Show Translations</p>
     <p ng-click= "showTran.toggle=true" ng-hide = "showTran.toggle" type="button">Hide Translations</p>
   </div>
+
+  <div>{{number}} cards {{percentage}}% learned</div>
 
 <!-- Deck Body -->
 <div data-ng-repeat="card in vm.deck.cards" id ="card">

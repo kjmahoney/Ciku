@@ -12,7 +12,6 @@ angular
 .factory("DeckFactory",[
   "$resource",
   DeckFactoryFunction,
-
 ])
 .controller("indexCtrl", [
   "$state",
@@ -24,7 +23,7 @@ angular
   "DeckFactory",
   "$state",
   "$scope",
-  showController
+  showController,
 ])
 .controller("quizCtrl",[
   "$stateParams",
@@ -76,8 +75,31 @@ function indexController($state, DeckFactory){
 
 function showController($stateParams, DeckFactory, $state, $scope, $index){
   console.log("show controller working")
-  this.deck = DeckFactory.get({name: $stateParams.name})
-  console.log(this.deck)
+  this.deck = DeckFactory.get({name: $stateParams.name}, (res)=>{
+    console.log(res.cards)
+    cards = this.deck.cards
+    this.percentLearned()
+  })
+  console.log(this.deck.cards)
+
+  this.percentLearned= function(){
+    console.log(this.deck.cards)
+    let learned = []
+    let unlearned = []
+    for (i =0; i <this.deck.cards.length; i++){
+      if(this.deck.cards[i].learned){
+        learned.push(this.deck.cards[i])
+      }else{
+        unlearned.push(this.deck.cards[i])
+      }
+    }
+    $scope.number = this.deck.cards.length
+    $scope.percentage = Math.ceil(((learned.length/this.deck.cards.length)*100))
+    console.log(learned.length)
+    console.log(unlearned.length)
+  }
+
+
   this.update = function() {
     this.deck.$update({name: $stateParams.name})
     console.log($stateParams.name)
@@ -101,13 +123,16 @@ function showController($stateParams, DeckFactory, $state, $scope, $index){
       pronounciation:$scope.pronounciation,
       literal:$scope.literal,
       context:$scope.context,
+      learned: false,
     })
     this.deck.$update({name: $stateParams.name})
+    this.percentLearned()
   }
 
   this.deleteCard = function(index){
     this.deck.cards.splice(index,1)
     this.deck.$update({name: $stateParams.name})
+    this.percentLearned()
   }
   newCard = false;
   showTran = false;
@@ -123,31 +148,42 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
   $scope.score = 0
 
   this.startQuiz = function(){
-    placeHolderArray = []
+    let placeHolderArray = []
     quizArray = placeHolderArray.concat(this.deck.cards)
     randomNumber = Math.floor(Math.random() * quizArray.length)
-    let question = quizArray[randomNumber]
+    question = quizArray[randomNumber]
     $scope.query = question.original
     $scope.answer = question.translation
   }
 
   this.answerQuestion = function(){
-    randomNumber = Math.floor(Math.random() * quizArray.length)
-    let question = quizArray[randomNumber]
+
+    //user input is that same as the
     if ($scope.userAnswer.toUpperCase() == $scope.answer.toUpperCase()){
-      console.log("correct")
-      $scope.query = question.original
-      $scope.answer = question.translation
+      //increase score, speed, and set card to learned in database
       $scope.score += 1
-      quizArray.pop(quizArray.indexOf(question))
       speed = ($scope.score/10)
       this.deck.cards[randomNumber].learned = true
-      this.deck.$update({name: $stateParams.name})
-      checkCards = this.deck.cards
+      //remove card from quizArray
+      console.log(quizArray)
+      console.log(quizArray.indexOf(question))
+      quizArray.splice(quizArray.indexOf(question),1)
+
       if (quizArray.length == 0){
         alert("You've finished the deck!")
-        learnedCalculator()
       }
+      //update changes in database
+      this.deck.$update({name: $stateParams.name})
+
+      //ends quiz when cards are depleted
+
+      //reset for next question
+      randomNumber = Math.floor(Math.random() * quizArray.length)
+      question = quizArray[randomNumber]
+      $scope.query = question.original
+      $scope.answer = question.translation
+
+
     }else{
       console.log("incorrect")
       //Set learned status of card to false and update database
@@ -156,20 +192,15 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
       //Session score reduced by one
       $scope.score -= 1
       speed = 0
-    }
+      quizArray.splice(quizArray.indexOf(question),1)
+      if (quizArray.length == 0){
+        alert("You've finished the deck!")
       }
-      learnedCalculator = function(){
-        console.log(this.deck)
-        let learned = 0
-        let unlearned = 0
-        for (i=0;i<this.deck.cards.length; i++){
-          if (this.deck.cards[i].learned){
-            learned.push(this.deck.cards[i])
-          }else{
-            unlearned.push(this.deck.cards[i])
-          }
-          percentLearned = (learned/unlearned * 100)
-          console.log(percentLearned)
+      randomNumber = Math.floor(Math.random() * quizArray.length)
+      question = quizArray[randomNumber]
+      $scope.query = question.original
+      $scope.answer = question.translation
     }
+
   }
 }
