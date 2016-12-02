@@ -19,10 +19,8 @@ app.get("/", (req,res)=>{
 })
 
 app.get("/api/decks", (req,res)=>{
-  console.log("Express get")
   Deck.find({}).then(decks =>{
     res.json(decks)
-    console.log(decks)
   })
 })
 
@@ -34,14 +32,12 @@ app.post("/api/decks",(req,res)=>{
 
 
 app.get("/api/decks/:name", function(req, res){
-  console.log("show api working")
   Deck.findOne({name: req.params.name}).then(function(deck){
     res.json(deck);
   });
 });
 
 app.get("/quiz", (req,res)=>{
-  console.log("Quiz working")
   Deck.find({}).then(decks =>{
     res.render("quiz",{
       decks: decks

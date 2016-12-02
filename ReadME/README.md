@@ -1,9 +1,9 @@
 #User Stories
 
 Scope Creep
-Add ability to add emoji to deck and words
-Flex wrap the index and show page
-Deck mastery score=> bronze is boolean value, gold is score
+Add checkbox for learned cards
+
+
 
 
 **Bronze**
@@ -20,15 +20,13 @@ Deck mastery score=> bronze is boolean value, gold is score
 **Gold**
 * The application supports phrases and idioms
 * I should have my own account that saves my decks
-* (External API)When reviewing a phrase, I should be able to click on a word and have its individual translation appear
-* (External API) I should be able to search for a character from the home page, then add it to my list.
-* Expand mastery functionality: Replace the boolean with a score  system for each card 
+* Expand mastery functionality: Replace the boolean with a score  system for each card
+* Flex wrap the index and show page
 
 **Fratinum**
 * Users can share their decks with other users
 * Users can import their decks via csv
-* (APIs) When creating a new word, its translation should auto populate
-* (External API) Expand to include other languages
+* Deck mastery score=> bronze is boolean value, gold is score
 
 
 Technologies Used:
