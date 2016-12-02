@@ -40,4 +40,4 @@ Chinese language in mind. It is most compatible with languages not using the Rom
 
 ##Technologies Used:
 ![alt text](MEAN.jpg "Logo Title Text 1")
-![alt text](threejs.jpg "Logo Title Text 1")
+![alt text](threejs.png "Logo Title Text 1")
