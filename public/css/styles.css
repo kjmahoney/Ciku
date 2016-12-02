@@ -12,7 +12,7 @@ body{
   margin: 0;
   padding: 0;
   border: 0;
-  font: 'ChunkFiveRegular';
+  font-family: 'Cormorant Garamond', serif;
 }
 
 header{
@@ -58,6 +58,7 @@ header{
 
 a{
   color: #002F9C;
+  text-decoration: none;
 }
 
 h1{
@@ -105,7 +106,7 @@ input{
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family:Arial;
+	font-family: 'Cormorant Garamond', serif;
 	font-size:13px;
 	padding:6px 24px;
 	text-decoration:none;

@@ -27,6 +27,7 @@
 }
 
 #deckNameBox{
+  font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
   margin: 20px 0px 0px 0px;
   width: 200px;
@@ -42,28 +43,39 @@
 }
 
 #statField{
-
+  margin: 0px 0px 10px 0px;
+  font-size: 20px;
 }
+
+#originalDiv{
+  width: 100px;
+  margin: 0px 0px 0px 0px;
+  text-align: left;
+}
+
 
 #original{
   font-size: 24px;
   margin: 0px 0px 0px 0px;
+  text-align: left;
+  font-family: serif;
 }
 
 #originalBox{
   font-size: 24px;
   margin: 0px 0px 0px 0px;
   width: 80px;
+  font-family: serif;
 }
 
 #translation{
-  color: #AD7142;
+  color: #002A9F;
   font-size: 20px;
   margin: 0px 0px 45px 10px;
 }
 
 #translationBox{
-  color: orange;
+  color: #002A9F;
   font-size: 20px;
   margin: 0px 0px 0px 10px;
   width: 80px;
@@ -72,26 +84,19 @@
 
 #pronounciation{
   margin: 0px 0px 0px 0px;
-  color: red;
+  color: #03C3EB;
   font-size: 12px;
+  font-family: arial;
 }
 
 #pronounciationBox{
   margin: 0px 0px 0px 0px;
-  color: red;
+  color: #03C3EB;
   font-size: 12px;
   width: 80px;
 }
 
-#originalDiv{
-  width: 100px;
-  margin: 0px 0px 0px 0px;
-  text-align: left;
 
-}
-#originalDiv>*>*{
-  text-align: left;
-}
 #tranDiv{
   margin: 0px 0px 0px 0px;
 }
