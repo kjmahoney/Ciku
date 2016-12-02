@@ -29,6 +29,15 @@ header{
   background-attachment: fixed;
 }
 
+#trailer{
+  display: none;
+  font-size: 40px;
+}
+
+#title:hover #trailer{
+  display:inline;
+}
+
 #showNav{
   height: 50px;
   width: 100%;
@@ -55,6 +64,8 @@ header{
 	color: rgba(255,255,255,0);
 	font: 80px 'ChunkFiveRegular';
 }
+
+
 
 a{
   color: #002F9C;

@@ -17,7 +17,6 @@
     <p id="editDeckButton" ng-if="editTitle.toggle" ng-click="vm.updateDeck(); editTitle.toggle=false">Submit</p>
   </div>
 
-
   <!-- hide and show translations -->
   <div id = "hideTranButton">
     <p ng-click= "showTran.toggle=false" ng-if = "showTran.toggle" type="button">Show Translations</p>
@@ -27,10 +26,7 @@
   <!-- Display stats of current deck -->
   <div id="statField" ng-hide="editTitle.toggle">{{number}} cards {{percentage}}% learned</div>
 
-
-
   <!-- Deck Body -->
-
   <div data-ng-repeat="card in vm.deck.cards" id ="card">
 
       <!-- display cards -->
