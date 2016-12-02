@@ -13,6 +13,8 @@ function showController($stateParams, DeckFactory, $state, $scope, $index){
     this.percentLearned()
   })
 
+
+
   this.percentLearned= function(){
     if (this.deck.cards.length == 0){
       $scope.percentage = 0;
@@ -27,6 +29,8 @@ function showController($stateParams, DeckFactory, $state, $scope, $index){
         learned.push(this.deck.cards[i])
       }
     }
+    console.log(this.deck.cards)
+    console.log(learned.length)
     //calculate percentage of cards learned to the cards in the deck
     $scope.percentage = Math.ceil(((learned.length/this.deck.cards.length)*100))
 
