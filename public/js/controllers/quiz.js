@@ -46,13 +46,10 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
     question = quizArray[randomNumber]
     $scope.query = question.original
     $scope.answer = question.translation
-    console.log(question)
   }
 
 
   this.answerQuestion = function(){
-    console.log($scope.userAnswer)
-    console.log($scope.answer)
     //user input is that same as the
     if ($scope.userAnswer.toUpperCase() == $scope.answer.toUpperCase()){
       //increase score, speed, and set card to learned in database
@@ -60,8 +57,7 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
       speed = ($scope.score/10)
       this.deck.cards[randomNumber].learned = true
       //remove card from quizArray
-      console.log(quizArray)
-      console.log(quizArray.indexOf(question))
+
       quizArray.splice(quizArray.indexOf(question),1)
 
       if (quizArray.length == 0){
@@ -79,7 +75,6 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
       $scope.answer = question.translation
     }
     }else{
-      console.log("incorrect")
       //Set learned status of card to false and update database
       this.deck.cards[randomNumber].learned = false
       this.deck.$update({name: $stateParams.name})
