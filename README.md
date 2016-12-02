@@ -8,7 +8,7 @@ answered correctly in quiz mode, will be labeled 'learned' and incorrectly will 
 can see the percentage of learned to not learned cards in each deck.
 
 Ciku can be used for any language or topic. However, its styling and card fields are designed with the
-Chinese language in mind. It is most compatible with languages not using the Roman alphabet. Ciku contains fields (i.e pronounciation) that are unnecessary for the learning of other topics. Additionally fields meant for characters may look strange when populated with alphabetic characters.
+Chinese language in mind. It is most compatible with languages not using the Roman alphabet. Ciku contains fields (i.e pronunciation) that are unnecessary for the learning of other topics. Additionally fields meant for characters may look strange when populated with alphabetic characters.
 
 
 ##User Stories

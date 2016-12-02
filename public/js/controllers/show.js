@@ -14,8 +14,13 @@ function showController($stateParams, DeckFactory, $state, $scope, $index){
   })
 
   this.percentLearned= function(){
+    if (this.deck.cards.length == 0){
+      $scope.percentage = 0;
+      $scope.number = 0;
+    }else{
     //placeholder
     let learned = []
+
     //for each card in the deck where learned is true, place into learned array
     for (i =0; i <this.deck.cards.length; i++){
       if(this.deck.cards[i].learned){
@@ -27,6 +32,7 @@ function showController($stateParams, DeckFactory, $state, $scope, $index){
 
     //total number of cards in deck
     $scope.number = this.deck.cards.length
+  }
   }
 
   //Update Deck Name
