@@ -66,6 +66,8 @@
   margin: 0px 0px 0px 0px;
   width: 80px;
   font-family: serif;
+  text-align: center;
+  border-radius: 25px;
 }
 
 #translation{
@@ -79,6 +81,9 @@
   font-size: 20px;
   margin: 0px 0px 0px 10px;
   width: 80px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  border-radius: 25px;
   /*background-color: #2BABF0;*/
 }
 
@@ -94,9 +99,16 @@
   color: #03C3EB;
   font-size: 12px;
   width: 80px;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  border-radius: 25px;
 }
-
 
 #tranDiv{
   margin: 0px 0px 0px 0px;
+}
+
+#submitButton{
+  font-family: 'Cormorant Garamond', serif;
+  border-radius: 25px;
 }

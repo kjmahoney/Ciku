@@ -53,18 +53,19 @@
 
         </div>
 
-            <input type="submit" ng-if ="editCard.toggle">
+            <input id="submitButton" type="submit" ng-if ="editCard.toggle">
 
             </form>
-            <input ng-if ="editCard.toggle" ng-click ="vm.deleteCard($index)" type="button" name="" value="Delete">
+            <input id="submitButton"  ng-if ="editCard.toggle" ng-click ="vm.deleteCard($index)" type="button" name="" value="Delete">
           </div>
     </div>
 
 
-<button class="blueButton" ng-click="newCard.toggle=true" ng-hide="newCard.toggle">New Deck</button>
+<button class="blueButton" ng-click="newCard.toggle=true" ng-hide="newCard.toggle">New Card</button>
+<p class = "cancel" ng-show="newCard.toggle" ng-click="newCard.toggle=false">Cancel</p>
 
 <!-- create a card -->
-<form ng-submit = "vm.createCard()" ng-if="newCard.toggle">
+<form ng-submit = "vm.createCard()" ng-show="newCard.toggle">
   <input type="text" ng-model="original" placeholder="original" required>
   <input type="text" ng-model="translation" placeholder="translation">
   <input type="text" ng-model="pronounciation" placeholder="pronounciation">
