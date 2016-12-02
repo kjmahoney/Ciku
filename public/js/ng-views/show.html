@@ -40,9 +40,11 @@
 
           <div id= "cardDiv" class = "row">
           <div id="originalDiv" class = "column">
+            <div class = "row">
+            {{$index + 1}}:
             <p id = "original" ng-click ="editCard.toggle = true"  ng-hide = "editCard.toggle" >{{card.original}}</p>
             <input id = 'originalBox' ng-if = "editCard.toggle" type="text" ng-model="card.original" placeholder="card.original">
-
+          </div>
             <p id = "pronounciation" ng-if="!showTran.toggle" ng-hide = "editCard.toggle">{{card.pronounciation}}<p>
             <input id = "pronounciationBox" type="text" ng-model="card.pronounciation" placeholder="translation" ng-if ="!showTran.toggle && editCard.toggle">
 

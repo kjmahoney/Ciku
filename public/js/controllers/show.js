@@ -62,6 +62,8 @@ function showController($stateParams, DeckFactory, $state, $scope, $index){
     this.deck.$update({name: $stateParams.name})
     this.percentLearned()
   }
+
+  $scope.numberCard = 1
   //Conditions to change view on show.html
   newCard = false;
   showTran = false;
