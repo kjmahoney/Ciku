@@ -1,16 +1,20 @@
 <nav id="showNav" class= "row">
-  <p data-ui-sref="index">Home</p>
-  <a data-ui-sref="quiz({name: vm.deck.name})">Quiz!</a>
-  <p>Help</p>
+    <p class ="navItem" data-ui-sref="index">Home</p>
+    <p class ="navItem" data-ui-sref="quiz({name: vm.deck.name})">Quiz!</p>
+    <p class ="navItem">Help</p>
 </nav>
 
-<!-- Deck Header -->
-<h2 id="deckName" ng-hide="editTitle.toggle" ng-click="editTitle.toggle=true">{{vm.deck.name}}</h2>
+
 
   <!-- edit deck name -->
-  <div class = "column">
-    <input ng-if="editTitle.toggle" type="text" ng-model="vm.deck.name" placeholder="Name"/>
-    <p id="deckName" ng-if="editTitle.toggle" ng-click="vm.updateDeck(); editTitle.toggle=false">Edit Deck Name</p>
+  <div id="deckNameDiv" class = "column">
+    <!-- Deck Header -->
+    <h2 id="deckName" ng-hide="editTitle.toggle" ng-click="editTitle.toggle=true">{{vm.deck.name}}</h2>
+
+    <!-- Box to edit Deck Header -->
+    <input id="deckNameBox" ng-if="editTitle.toggle" type="text" ng-model="vm.deck.name" placeholder="Name"/>
+    <!-- Submit changes to Deck Header -->
+    <p id="editDeckButton" ng-if="editTitle.toggle" ng-click="vm.updateDeck(); editTitle.toggle=false">Submit</p>
   </div>
 
 
@@ -20,18 +24,21 @@
     <p ng-click= "showTran.toggle=true" ng-hide = "showTran.toggle" type="button">Hide Translations</p>
   </div>
 
-  <div>{{number}} cards {{percentage}}% learned</div>
+  <!-- Display stats of current deck -->
+  <div id="statField" ng-hide="editTitle.toggle">{{number}} cards {{percentage}}% learned</div>
 
-<!-- Deck Body -->
-<div data-ng-repeat="card in vm.deck.cards" id ="card">
+
+
+  <!-- Deck Body -->
+  <div data-ng-repeat="card in vm.deck.cards" id ="card">
 
       <!-- display cards -->
       <div class="column">
 
           <form ng-submit = "vm.updateCard($index, card)">
 
-          <div class = "row">
-          <div class = "column">
+          <div id= "cardDiv" class = "row">
+          <div id="originalDiv" class = "column">
             <p id = "original" ng-click ="editCard.toggle = true"  ng-hide = "editCard.toggle" >{{card.original}}</p>
             <input id = 'originalBox' ng-if = "editCard.toggle" type="text" ng-model="card.original" placeholder="card.original">
 
@@ -45,12 +52,6 @@
 
         </div>
 
-            <!-- <p id = "literal" ng-if="showTran.toggle" ng-hide = "editCard.toggle">{{card.literal}}</p>
-            <input type="text" ng-model="card.literal" placeholder="literal" ng-if ="showTran.toggle && editCard.toggle">
-
-            <p id = "context" ng-if="showTran.toggle" ng-hide = "editCard.toggle">{{card.context}}</p>
-            <input type="text" ng-model="card.context" placeholder="context" ng-if ="showTran.toggle && editCard.toggle"> -->
-
             <input type="submit" ng-if ="editCard.toggle">
 
             </form>
@@ -59,15 +60,14 @@
     </div>
 
 
+<button class="blueButton" ng-click="newCard.toggle=true" ng-hide="newCard.toggle">New Deck</button>
 
 <!-- create a card -->
-<form ng-submit = "vm.createCard()">
-  <input type="text" ng-model="original" placeholder="original">
+<form ng-submit = "vm.createCard()" ng-if="newCard.toggle">
+  <input type="text" ng-model="original" placeholder="original" required>
   <input type="text" ng-model="translation" placeholder="translation">
   <input type="text" ng-model="pronounciation" placeholder="pronounciation">
-  <!-- <input type="text" ng-model="literal" placeholder="literal">
-  <input type="text" ng-model="context" placeholder="context"> -->
-  <input type="submit">
+  <input class="blueButton" type="submit">
 </form>
 
 <!-- delete the deck -->

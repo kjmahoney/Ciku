@@ -1,19 +1,3 @@
-/*body{
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}*/
-
-#showNav{
-  height: 50px;
-  width: 100%;
-  background-color: #DEBF99;
-
-  opacity: 0.5;
-}
-
 #hideTranButton{
   margin: -30px 0px 20px 0px;
   font-size: 12px;
@@ -23,12 +7,42 @@
   color: #22C3E9;
 }
 
+#deckNameDiv{
+  margin: 20px 0px 20px 0px;
+  color: #002F9C;
+}
+
 #deckName{
+  margin: 20px 0px 20px 0px;
   color: #002F9C;
 }
 
 #deckName:hover {
+  margin: 20px 0px 20px 0px;
   color: #22C3E9;
+}
+
+#editDeckButton:hover {
+  color: #22C3E9;
+}
+
+#deckNameBox{
+  font-size: 24px;
+  margin: 20px 0px 0px 0px;
+  width: 200px;
+  height: 50px;
+  background-color: white;
+  border-radius: 25px;
+  text-align: center;
+  color: #002A9F;
+}
+
+#editDeckBox{
+  margin: -15px 0px 0px 0px;
+}
+
+#statField{
+
 }
 
 #original{
@@ -43,7 +57,7 @@
 }
 
 #translation{
-  color: #FF6900;
+  color: #AD7142;
   font-size: 20px;
   margin: 0px 0px 45px 10px;
 }
@@ -53,9 +67,7 @@
   font-size: 20px;
   margin: 0px 0px 0px 10px;
   width: 80px;
-
   /*background-color: #2BABF0;*/
-
 }
 
 #pronounciation{
@@ -69,4 +81,17 @@
   color: red;
   font-size: 12px;
   width: 80px;
+}
+
+#originalDiv{
+  width: 100px;
+  margin: 0px 0px 0px 0px;
+  text-align: left;
+
+}
+#originalDiv>*>*{
+  text-align: left;
+}
+#tranDiv{
+  margin: 0px 0px 0px 0px;
 }
