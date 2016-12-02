@@ -19,8 +19,8 @@ Chinese language in mind. It is most compatible with languages not using the Rom
 - [x] I should be able to quiz myself on the contents of a particular category
 
 **Silver**
-- [x] (Gameification) A 3D visual representation responds to my progress during a quiz
-- [x] (Gameification) Add a scoring mechanism
+- [x] Gameification: A 3D visual representation responds to my progress during a quiz
+- [x] Gameification: Add a scoring mechanism
 - [x] I should be able to see my progress through a deck (assign boolean 'learned' value to each card)
 
 **Gold**
@@ -32,12 +32,13 @@ Chinese language in mind. It is most compatible with languages not using the Rom
 **Platinum**
 - [] Users can share their decks with other users
 - [] Users can import their decks via csv
-- [] (APIs) When creating a new word, its translation should auto populate
-- [] (External API)When reviewing a phrase, I should be able to click on a word and have its individual translation appear
-- [] (External API) I should be able to search for a character from the home page, then add it to my list.
-- [] (External API) Expand to include other languages
+- [] APIs When creating a new word, its translation should auto populate
+- [] External API When reviewing a phrase, I should be able to click on a word and have its individual translation appear
+- [] External API I should be able to search for a character from the home page, then add it to my list.
+- [] External API Expand to include other languages
 
 
 ##Technologies Used:
+![alt text](MEAN.jpg "Logo Title Text 1")
 [logo]: MEAN.jpg "Logo Title Text 2"
 [logo]: threejs.png "Logo Title Text 2"

@@ -30,7 +30,7 @@ header{
 }
 
 #trailer{
-  display: none;
+  display: inline;
   font-size: 40px;
 }
 
