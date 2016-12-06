@@ -60,9 +60,6 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
       this.deck.cards[randomNumber].learned = true
       this.deck.$update({name: $stateParams.name})
       console.log(this.deck.cards[randomNumber].learned)
-      //remove card from quizArray
-
-
 
       if (quizArray.length == 0){
         this.deck.cards[randomNumber].learned = true
