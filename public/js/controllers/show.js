@@ -10,31 +10,9 @@ angular
 
 function showController($stateParams, DeckFactory, $state, $scope, $index){
   this.deck = DeckFactory.get({name: $stateParams.name}, (res)=>{
-    this.percentLearned()
+    $scope.percentage = percentLearned(this.deck)
+    $scope.number = cardsLength(this.deck)
   })
-
-  this.percentLearned= function(){
-    if (this.deck.cards.length == 0){
-      $scope.percentage = 0;
-      $scope.number = 0;
-    }else{
-    //placeholder
-    let learned = []
-
-    //for each card in the deck where learned is true, place into learned array
-    for (i =0; i <this.deck.cards.length; i++){
-      if(this.deck.cards[i].learned){
-        learned.push(this.deck.cards[i])
-      }
-    }
-
-    //calculate percentage of cards learned to the cards in the deck
-    $scope.percentage = Math.ceil(((learned.length/this.deck.cards.length)*100))
-
-    //total number of cards in deck
-    $scope.number = this.deck.cards.length
-  }
-  }
 
   //Update Deck Name
   this.updateDeck = function() {
