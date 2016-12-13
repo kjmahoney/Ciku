@@ -6,8 +6,8 @@ Ciku is an application for studying languages and is especially tailored for Chi
 ##Installation
 1. Run `git clone https://github.com/kjmahoney/Ciku.git`
 2. Run `npm install`
-3. Run MongoDB in your terminal`mongod`
-4. Open another terminal window and run node `node`
+3. Run mongod` in your terminal`
+4. Open another terminal window and run`node`
 5. Go to `http://localhost:4002/#/` in your browser
 
 ##Technologies Used:
