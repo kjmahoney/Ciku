@@ -8,6 +8,7 @@ git clone https://github.com/kjmahoney/Ciku.git
 Run `npm install`
 Run MongoDB in your terminal`mongod`
 Open another terminal window and run node `node`
+Go to `http://localhost:4002/#/` in your browser
 
 ##Technologies Used:
 ![alt text](MEAN.jpg "Logo Title Text 1")
