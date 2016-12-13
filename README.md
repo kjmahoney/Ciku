@@ -4,11 +4,11 @@
 Ciku is an application for studying languages and is especially tailored for Chinese. Ciku allows you to create decks of vocabulary cards and then to quiz yourself on each deck.
 
 ##Installation
-git clone https://github.com/kjmahoney/Ciku.git
-Run `npm install`
-Run MongoDB in your terminal`mongod`
-Open another terminal window and run node `node`
-Go to `http://localhost:4002/#/` in your browser
+1. git clone https://github.com/kjmahoney/Ciku.git
+2. Run `npm install`
+3. Run MongoDB in your terminal`mongod`
+4. Open another terminal window and run node `node`
+5. Go to `http://localhost:4002/#/` in your browser
 
 ##Technologies Used:
 ![alt text](MEAN.jpg "Logo Title Text 1")
