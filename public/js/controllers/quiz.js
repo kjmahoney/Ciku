@@ -12,15 +12,12 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
   //launches three.js
   init()
   this.deck = DeckFactory.get({name: $stateParams.name})
-  DeckFactory.get({name: $stateParams.name}).$promise.then(response => this.deck.cards = response.cards)
+  DeckFactory.get({name: $stateParams.name})
   $scope.score = 0
-
 
   this.deck = DeckFactory.get({name: $stateParams.name}, (res)=>{
     this.percentLearned()
   })
-
-  
 
 
   // $scope.query = "Click screen above to begin"
