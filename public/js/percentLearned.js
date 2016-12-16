@@ -1,4 +1,4 @@
-this.percentLearned= function(deck){
+percentLearned= function(deck){
   //placeholder array
   let learned = []
   //for each card in the deck where learned is true, place into learned array
@@ -12,6 +12,6 @@ this.percentLearned= function(deck){
 }
 
 //provide number of cards in the deck
-this.cardsLength= function(deck){
+cardsLength= function(deck){
   return number = deck.cards.length
 }

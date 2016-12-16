@@ -11,81 +11,65 @@ angular
 function quizController($stateParams, DeckFactory, $state, $scope, $index){
   //launches three.js
   init()
+
   this.deck = DeckFactory.get({name: $stateParams.name})
-  DeckFactory.get({name: $stateParams.name})
+  DeckFactory.get({name: $stateParams.name}).$promise.then(response => this.deck.cards = response.cards)
   $scope.score = 0
 
   this.deck = DeckFactory.get({name: $stateParams.name}, (res)=>{
-    this.percentLearned()
+    percentLearned(this.deck)
   })
-
 
   // $scope.query = "Click screen above to begin"
   this.startQuiz = function(){
     speed = 0.01
     let placeHolderArray = []
     quizArray = placeHolderArray.concat(this.deck.cards)
-    randomNumber = Math.floor(Math.random() * quizArray.length)
-    question = quizArray[randomNumber]
+    this.nextQuestion()
+  }
+
+  this.nextQuestion = function(){
+    question = quizArray[Math.floor(Math.random() * quizArray.length)]
     $scope.query = question.original
     $scope.answer = question.translation
   }
 
-
   this.answerQuestion = function(){
-    console.log($scope.answer)
-    //user input is that same as the
+      //if user input is that same as the translation
     if ($scope.userAnswer.toUpperCase() == $scope.answer.toUpperCase()){
-      //increase score, speed, and set card to learned in database
-      quizArray.splice(quizArray.indexOf(question),1)
+      //increase session score
       $scope.score += 1
+      //increase speed of cube
       speed = ($scope.score/10)
-      this.deck.cards[randomNumber].learned = true
-      this.deck.$update({name: $stateParams.name})
-      console.log(this.deck.cards[randomNumber].learned)
-
-      if (quizArray.length == 0){
-        this.deck.cards[randomNumber].learned = true
-        this.deck.$update({name: $stateParams.name}).then($state.go("show", {name: $stateParams.name}))
-        alert("You've completed the deck with a score of" + " " + $scope.score)
-
-      }else{
-
-      //update changes in database
-      this.deck.$update({name: $stateParams.name})
-
-      //reset for next question
-      randomNumber = Math.floor(Math.random() * quizArray.length)
-      question = quizArray[randomNumber]
-      $scope.query = question.original
-      $scope.answer = question.translation
-      $scope.userAnswer=""
-    }
-    }else{
-      //Set learned status of card to false and update database
-      this.deck.cards[randomNumber].learned = false
-      this.deck.$update({name: $stateParams.name})
-      console.log(this.deck.cards[randomNumber].learned)
-
-
-      //Session score reduced by one
-      $scope.score -= 1
-      speed = 0
+      //set card to learned
+      this.deck.cards[this.deck.cards.indexOf(question)].learned = true
+      //remove card from the deck
       quizArray.splice(quizArray.indexOf(question),1)
+    }else{
+      //stop the cube
+      speed = 0
+      //Set card to unlearned
+      this.deck.cards[this.deck.cards.indexOf(question)].learned = false
+      //remove card from session
+      quizArray.splice(quizArray.indexOf(question),1)
+      //update the database
+    }
 
-      if (quizArray.length == 0){
-        this.deck.cards[randomNumber].learned = false
-        this.deck.$update({name: $stateParams.name}).then($state.go("show", {name: $stateParams.name}))
-        alert("You've completed the deck with a score of" + " " + $scope.score)
-      }else{
-      randomNumber = Math.floor(Math.random() * quizArray.length)
-      question = quizArray[randomNumber]
-      $scope.query = question.original
-      $scope.answer = question.translation
+    //if 0 cards in session, end the quiz
+    if (quizArray.length == 0){
+      //update changes to deck
+      this.deck.$update({name: $stateParams.name})
+      //return to deck
+      $state.go("show", {name: $stateParams.name})
+      //alert score to user
+      alert("You've completed the deck with a score of" + " " + $scope.score)
+
+    }else{
+      //clear the answer box
       $scope.userAnswer=""
+      //reset for next question
+      this.nextQuestion()
     }
-    }
-
   }
   hideFooter=false
 }
