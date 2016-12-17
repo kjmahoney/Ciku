@@ -23,12 +23,12 @@
   </div>
 </div>
 
-  <canvas ng-click = "vm.startQuiz(); hideFooter.toggle=true" id="myCanvas"></canvas>
+  <canvas ng-click = "vm.startQuiz()" id="myCanvas"></canvas>
 
   <!-- Interface for quiz -->
-  <form ng-submit = "vm.answerQuestion()">
+  <form ng-submit = "vm.answerQuestion(); hideFooter.toggle=true">
     <div class= "quizFooter">
-    <p ng-hide="hideFooter.toggle">Click screen above to begin</p>
+    <p ng-hide="hideFooter.toggle">Enter translation in box below</p>
     <p ng-show="hideFooter.toggle"></p>
     </div>
     <div id="quizBox" class="column">

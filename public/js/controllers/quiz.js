@@ -9,57 +9,48 @@ angular
 ])
 
 function quizController($stateParams, DeckFactory, $state, $scope, $index){
-  //launches three.js
+  //launches three.js to spin cube
   init()
-
-  // this.deck = DeckFactory.get({name: $stateParams.name})
-  // DeckFactory.get({name: $stateParams.name}).$promise.then(response => this.deck.cards = response.cards)
+  //set score to zero
   $scope.score = 0
-
+  //get deck from database
   this.deck = DeckFactory.get({name: $stateParams.name}, (res)=>{
     $scope.percentage = percentLearned(this.deck)
-    this.sessionArray = startQuiz(this.deck.cards)
+    this.startQuiz()
   })
 
-  // $scope.query = "Click screen above to begin"
-
   this.startQuiz = function(){
-    //start cube spin
-    speed = 0.01
-    let placeHolderArray = []
-    sessionArray = placeHolderArray.concat(this.deck.cards)
-    this.nextQuestion()
+    $scope.sessionArray = startQuiz(this.deck.cards)
+    this.nextQuestion($scope.sessionArray)
   }
 
-  this.nextQuestion = function(){
+  this.nextQuestion = function(sessionArray){
     question = sessionArray[Math.floor(Math.random() * sessionArray.length)]
     $scope.query = question.original
-    $scope.answer = question.translation
+    $scope.actualAnswer = question.translation
   }
 
   this.answerQuestion = function(){
     //if user input is that same as the translation
-    if ($scope.userAnswer.toUpperCase() == $scope.answer.toUpperCase()){
+    if ($scope.userAnswer.toUpperCase() == $scope.actualAnswer.toUpperCase()){
       //increase session score
       $scope.score += 1
       //increase speed of cube
-      speed = ($scope.score/10)
-      //set card to learned
+      increaseSpeed()
+      //set card to learned in database
       this.deck.cards[this.deck.cards.indexOf(question)].learned = true
-      //remove card from the deck
-      sessionArray.splice(sessionArray.indexOf(question),1)
     }else{
-      //stop the cube as punishment
-      speed = 0
-      //Set card to unlearned
+      //slow down the cube
+      decreaseSpeed()
+      //Set card to unlearned in database
       this.deck.cards[this.deck.cards.indexOf(question)].learned = false
-      //remove card from session
-      sessionArray.splice(sessionArray.indexOf(question),1)
-      //update the database
     }
 
+    //remove card from session deck
+    $scope.sessionArray.splice($scope.sessionArray.indexOf(question),1)
+
     //if 0 cards in session, end the quiz
-    if(sessionArray.length == 0){
+    if($scope.sessionArray.length == 0){
       //update changes to deck
       this.deck.$update({name: $stateParams.name})
       //return to deck
@@ -71,7 +62,7 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
       //clear the answer box
       $scope.userAnswer=""
       //reset for next question
-      this.nextQuestion()
+      this.nextQuestion($scope.sessionArray)
     }
   }
   hideFooter=false

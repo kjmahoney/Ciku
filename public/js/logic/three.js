@@ -2,7 +2,16 @@
 
 function init(){
   //Click Functionality_______________
-  speed = 0.0
+  speed = 0.01
+
+
+  increaseSpeed = function(){
+     speed = speed + .08;
+  }
+
+  decreaseSpeed = function(){
+    speed = speed -.1;
+  }
 
   //Render Shapes
   var renderer = new THREE.WebGLRenderer({canvas: document.getElementById("myCanvas"), antialias:true});
