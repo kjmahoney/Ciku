@@ -4,8 +4,7 @@ var CardSchema = new mongoose.Schema({
   original: String,
   translation: String,
   pronounciation: String,
-  literal: String,
-  context: String,
+  note: String,
   learned: Boolean,
 })
 

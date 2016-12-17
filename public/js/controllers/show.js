@@ -34,8 +34,7 @@ function showController($stateParams, DeckFactory, $state, $scope, $index){
       original: $scope.original,
       translation: $scope.translation,
       pronounciation:$scope.pronounciation,
-      literal:$scope.literal,
-      context:$scope.context,
+      note: $scope.note,
       learned: false,
     })
     this.deck.$update({name: $stateParams.name})
@@ -49,6 +48,7 @@ function showController($stateParams, DeckFactory, $state, $scope, $index){
   }
 
   $scope.numberCard = 1
+
   //Conditions to change view on show.html
   newCard = false;
   showTran = false;

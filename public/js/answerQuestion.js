@@ -1,11 +1,19 @@
-startQuiz = function(deck, $scope){
-  speed = 0.01
+startQuiz = function(cards){
+  console.log(" startQuiz working")
+  //start cube spin
   let placeHolderArray = []
-
-  quizArray = placeHolderArray.concat(deck.cards)
-  randomNumber = Math.floor(Math.random() * quizArray.length)
-  question = quizArray[randomNumber]
-
-  cheeseburger = question.original
-  scope.answer = question.translation
+  let sessionArray = placeHolderArray.concat(cards)
+  console.log(sessionArray)
+  return sessionArray
+  // nextQuestion(sessionArray)
 }
+
+// nextQuestion = function(sessionArray){
+//   console.log("nextQuestion working", sessionArray)
+// }
+
+//nextQuestion
+//recieve sessionArray
+//create random question
+//return question to controller
+//send question to translate function
