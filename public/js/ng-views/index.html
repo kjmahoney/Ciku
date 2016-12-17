@@ -1,25 +1,34 @@
-<nav id="showNav">
-  <nav id="showNav" class= "row">
-    <p>Welcome!</p>
-  </nav>
+<!-- Nav Bar -->
+<nav class="top-bar nav-desktop navbar">
+  <div class = "wrap">
+    <div class="top-bar">
+      <ul class = "row">
+        <li><a class ="nav-item home-link" href="#">Welcome</a></li>
+        <li><a class ="nav-item portfolio-link" href="#">Help</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
+
+<!-- Body  -->
+<div class = "wrap">
 <h2>My Decks</h2>
-
-<h3 data-ng-repeat="deck in vm.decks">
-  <a data-ui-sref="show({name: deck.name})">{{deck.name}}</a>
-
-</h3>
 
 <button class ="blueButton" ng-click="showField.toggle=true" ng-hide="showField.toggle">Add Deck</button>
 <form ng-submit="vm.create()">
 
-<div class = "column" ng-if="showField.toggle">
-  <input ng-if="showField.toggle" type="text" ng-model="vm.newDeck.name" placeholder="New Deck Name"/>
-  <button class ="blueButton" type="submit" ng-show="showField.toggle">Create Deck</button>
-  <p class = "cancel" ng-click="showField.toggle=false">Cancel</p>
-</div>
+  <div class = "column" ng-if="showField.toggle">
+    <input ng-if="showField.toggle" type="text" ng-model="vm.newDeck.name" placeholder="New Deck Name"/>
+    <button class ="blueButton" type="submit" ng-show="showField.toggle">Create Deck</button>
+    <p class = "cancel" ng-click="showField.toggle=false">Cancel</p>
+  </div>
 
 </form>
 
+<div class ="row">
 
-<p ng-click= "showTran.toggle=false" ng-if = "showTran.toggle" type="button">Show Translations</p>
+    <div class = " deck small-12 medium-4" data-ng-repeat="deck in vm.decks">
+      <h3><a data-ui-sref="show({name: deck.name})">{{deck.name}}</a></h3>
+    </div>>
+</div>
+</div>

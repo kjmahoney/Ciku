@@ -4,7 +4,6 @@ function init(){
   //Click Functionality_______________
   speed = 0.01
 
-
   increaseSpeed = function(){
      speed = speed + .08;
   }
