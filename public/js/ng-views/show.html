@@ -18,25 +18,26 @@
 
 
   <!-- edit deck name -->
-  <div id="deckNameDiv" class = "column">
+  <div id="deck-name-div" class = "column">
     <!-- Deck Header -->
     <h2 class="deck-title" ng-hide="editTitle.toggle" ng-click="editTitle.toggle=true">{{vm.deck.name}}</h2>
-
     <!-- Box to edit Deck Header -->
     <input id="deckNameBox" ng-if="editTitle.toggle" type="text" ng-model="vm.deck.name" placeholder="Name"/>
     <!-- Submit changes to Deck Header -->
     <p id="editDeckButton" ng-if="editTitle.toggle" ng-click="vm.updateDeck(); editTitle.toggle=false">Submit</p>
   </div>
-  <div class="stat-field" ng-hide="editTitle.toggle">{{number}} cards {{percentage}}% learned</div>
+
+  <div class="stat-field" ng-hide="editTitle.toggle">{{number}} cards {{percentage}}% learned
+  </div>
   <!-- hide and show translations -->
-  <div id = "tran-button">
+  <div class = "tran-button">
     <p ng-click= "showTran.toggle=false" ng-if = "showTran.toggle" type="button">Show Translations</p>
     <p ng-click= "showTran.toggle=true" ng-hide = "showTran.toggle" type="button">Hide Translations</p>
   </div>
 
   <!-- Display stats of current deck -->
 
-
+<div class = "wrap page">
   <!-- Deck Body -->
   <div data-ng-repeat="card in vm.deck.cards" id ="card">
 
@@ -49,21 +50,20 @@
               {{$index + 1}}:
             <div class = "show-div small-4 medium-6">
               <p class = "original" ng-click ="editCard.toggle = true"  ng-hide = "editCard.toggle" >{{card.original}}</p>
-              <input id = 'originalBox' ng-if = "editCard.toggle" type="text" ng-model="card.original" placeholder="card.original">
+              <input class = 'original-box' ng-if = "editCard.toggle" type="text" ng-model="card.original" placeholder="card.original">
             </div>
 
             <div class = "show-div small-4 medium-2">
               <p class = "pronounce" ng-if="!showTran.toggle" ng-hide = "editCard.toggle">{{card.pronounciation}}<p>
-              <input id = "pronounciationBox" type="text" ng-model="card.pronounciation" placeholder="translation" ng-if ="!showTran.toggle && editCard.toggle">
+              <input class = "pronounce-box" type="text" ng-model="card.pronounciation" placeholder="translation" ng-if ="!showTran.toggle && editCard.toggle">
             </div>
 
             <div class = "show-div small-4 medium-4">
               <p class = "translation" ng-if="!showTran.toggle" ng-hide = "editCard.toggle">{{card.translation}}</p>
-              <input id = "translationBox" type="text" ng-model="card.translation" placeholder="pronounciation" ng-if ="!showTran.toggle && editCard.toggle">
+              <input class = "translation-box" type="text" ng-model="card.translation" placeholder="pronounciation" ng-if ="!showTran.toggle && editCard.toggle">
             </div>
 
             </div>
-            <hr>
             <input id="submitButton" type="submit" ng-if ="editCard.toggle" value = "Update Card">
 
             </form>
@@ -85,5 +85,5 @@
 
 <!-- delete the deck -->
 <button class="blueButton" data-ng-click="vm.destroy()">Delete Deck</button>
-
+</div>
 <!-- back to index -->
