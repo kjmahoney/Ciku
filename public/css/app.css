@@ -115,7 +115,19 @@ h2{
 
 
 /*  === DECK SHOW PAGE === */
+#tran-button{
 
+}
+
+.hero-show-quiz{
+  /*background-image: url("");*/
+  min-height: 300px;
+  background-size: cover;
+}
+
+.hero-show-quiz h2{
+  margin:50px 0px -10px 0px;
+}
 
 
 
