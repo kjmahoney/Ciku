@@ -1,10 +1,16 @@
 /*  === GENERAL === */
+.wrap{
+  width: 90%;
+  margin: 0px auto;
+  max-width: 1100px;
+}
 
 /*Home navbar*/
 .top-bar{
   text-align: center;
   background-color: #F8F8F8;
   border: 0px solid #E9E9E9;
+  height: 60px;
 }
 
 .top-bar ul{
@@ -13,13 +19,92 @@
 
 .top-bar ul li{
   list-style: none;
-  margin: 0px 10px;
+  margin: 0px 20px;
+  color: #3A2047;
+  line-height: 60px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.top-bar a{
+  color: #3A2047;
+}
+
+.top-bar a:hover{
+  color: #ECA6FD;
+}
+
+.button{
+  margin: 15px 0px;
+}
+
+/*Home header*/
+.hero{
+  background-image: url("http://theplanetd.com/images/Hong-kong-city-skyline-X2.jpg");
+  /*background-image: url("HeaderpicCropped.png");*/
+  /*background-color: #999;*/
+  padding: 80px 0px;
+  min-height: 575px;
+  /*height: 100%;*/
+  color: white;
+  margin-top: 0px;
+  z-index: -1;
+  background-attachment: scroll;
+  background-attachment: fixed;
+  background-size: cover;;
+}
+
+.hero h2{
+  margin:150px 0px -10px 0px;
+  font-size: 80px;
+  text-shadow: 0px 0px 10px rgba(255,255,255,1), 0px 0px 30px rgba(255,255,255,1), 0px 0px  0px rgba(255,255,255,1), 0px 0px 0px rgba(255,255,255,1);
+  color: rgba(255,255,255,0);
+  font: 80px 'ChunkFiveRegular';
+}
+
+.hero span{
+  font-size: 20px;
+  margin:10px 0px -10px 20px;
+  opacity: .8;
+}
+
+.hero .chinese-title {
+  font-size: 40px;
+  margin: 0;
+}
+
+h2{
+  font: 60px 'ChunkFiveRegular';
+  color: black;
+  margin-top: 40px;
+}
+
+.button{
+  width: 200px;
+  background-color: #4095C0;
 }
 
 /*Home body*/
-.deckBody{
 
+.deck{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 20px;
+}
 
+.deck div{
+  border: 1px solid #CCCCCC;
+  border-radius: 15px;
+  height: 30%;
+  width: 30%;
+  margin: 20px 20px;
+  margin-top: 0px;
+  font: 20px 'ChunkFiveRegular';
+}
+
+.deck div a{
+  color: black;
+  font: 30px 'ChunkFiveRegular';
 }
 
 

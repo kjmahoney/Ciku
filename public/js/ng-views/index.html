@@ -1,20 +1,27 @@
+<div class ="hero">
+  <div class = "wrap">
+    <div class="row">
+      <h2>Ciku<span class ="chinese-title">词库</span><span>Study Chinese</span></h2>
+    </div>
+  </div>
+</div>
+
 <!-- Nav Bar -->
 <nav class="top-bar nav-desktop navbar">
   <div class = "wrap">
-    <div class="top-bar">
       <ul class = "row">
         <li><a class ="nav-item home-link" href="#">Welcome</a></li>
         <li><a class ="nav-item portfolio-link" href="#">Help</a></li>
       </ul>
-    </div>
   </div>
 </nav>
 
 <!-- Body  -->
+
 <div class = "wrap">
 <h2>My Decks</h2>
 
-<button class ="blueButton" ng-click="showField.toggle=true" ng-hide="showField.toggle">Add Deck</button>
+<button class ="button" ng-click="showField.toggle=true" ng-hide="showField.toggle">Add Deck</button>
 <form ng-submit="vm.create()">
 
   <div class = "column" ng-if="showField.toggle">
@@ -25,10 +32,10 @@
 
 </form>
 
-<div class ="row">
+<div class ="deck row">
 
-    <div class = " deck small-12 medium-4" data-ng-repeat="deck in vm.decks">
-      <h3><a data-ui-sref="show({name: deck.name})">{{deck.name}}</a></h3>
-    </div>>
+    <div class = "small-12 medium-4" data-ng-repeat="deck in vm.decks">
+      <h3 class = "small-12 medium-4"><a data-ui-sref="show({name: deck.name})">{{deck.name}}</a></h3>
+    </div>
 </div>
 </div>
