@@ -31,8 +31,8 @@
   </div>
   <!-- hide and show translations -->
   <div class = "tran-button">
-    <p ng-click= "showTran.toggle=false" ng-if = "showTran.toggle" type="button">Show Translations</p>
-    <p ng-click= "showTran.toggle=true" ng-hide = "showTran.toggle" type="button">Hide Translations</p>
+    <p class ="button" ng-click= "showTran.toggle=false" ng-if = "showTran.toggle" type="button">Show Translations</p>
+    <p class ="button" ng-click= "showTran.toggle=true" ng-hide = "showTran.toggle" type="button">Hide Translations</p>
   </div>
 
   <!-- Display stats of current deck -->
@@ -70,9 +70,10 @@
             <input id="submitButton"  ng-if ="editCard.toggle" ng-click ="vm.deleteCard($index)" type="button" name="" value="Delete">
           </div>
     </div>
+</div>
 
-
-<button class="blueButton" ng-click="newCard.toggle=true" ng-hide="newCard.toggle">New Card</button>
+<div class = "wrap page">
+<button class="button show-card-button-box" ng-click="newCard.toggle=true" ng-hide="newCard.toggle">New Card</button>
 <p class = "cancel" ng-show="newCard.toggle" ng-click="newCard.toggle=false">Cancel</p>
 
 <!-- create a card -->
@@ -84,6 +85,7 @@
 </form>
 
 <!-- delete the deck -->
-<button class="blueButton" data-ng-click="vm.destroy()">Delete Deck</button>
+<button class="button alert show-card-button-box" data-ng-click="vm.destroy()">Delete Deck</button>
 </div>
+
 <!-- back to index -->
