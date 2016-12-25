@@ -24,22 +24,21 @@
   <p class = "score">Session Score: {{score}}</p>
 
   <!-- Displays the spinning cube! -->
-  <canvas ng-click = "vm.startQuiz()" id="myCanvas"></canvas>
+  <canvas class ="small-4 medium-6" ng-click = "vm.startQuiz()" id="myCanvas"></canvas>
 
   <!-- Interface for quiz -->
   <form ng-submit = "vm.answerQuestion(); hideFooter.toggle=true">
 
     <!-- Instructional message to disappear -->
     <div class= "quizFooter">
-      <p class ="disappear-note" ng-hide="hideFooter.toggle">Enter answer in translation box below</p>
+      <p class ="disappear-note" ng-hide="hideFooter.toggle">Enter answer in box below</p>
     </div>
 
     <!-- displays item to be translated -->
     <div class = "quizBox" class="column">
       <div class= "question-box">{{query}}</div>
       <div class="column">
-        <p>Translation:</p>
-        <input id ="answerBox" ng-model= "userAnswer" type="text" name="name" value="vm.userAnswer" required>
+        <input class ="answer-box" ng-model= "userAnswer" type="text" name="name" value="vm.userAnswer" required>
         <button class = "blueButton" type="submit" name="button">Submit</button>
     </form>
 
