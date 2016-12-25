@@ -194,5 +194,16 @@ h2{
   margin-top: 20px;
 }
 
-
 /* === QUIZ PAGE ===*/
+.score{
+  margin: 20px 0 0 0;
+}
+
+.disappear-note{
+  margin: 10px 0px 0px 0px;
+}
+
+.question-box{
+  font-size: 36px;
+  font-family: 'Cormorant Garamond', serif;
+}

@@ -1,58 +1,48 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Quiz</title>
-</head>
-<body id = "quizBody">
-<div class="column">
-
-  <div class ="hero">
-    <div class = "wrap">
-      <div class="row">
-        <h2>Ciku<span class ="chinese-title">词库</span><span>Study Chinese</span></h2>
-      </div>
+<!-- Hero Section -->
+<div class ="hero hero-show-quiz">
+  <div class = "wrap">
+    <div class="row">
+      <h2>Ciku<span class ="chinese-title">词库</span><span>Study Chinese</span></h2>
     </div>
-  </div>
-
-
-  <nav id="showNav" class= "row">
-    <p class="navItem" data-ui-sref="index">Home</p>
-    <p class="navItem" data-ui-sref="show({name: vm.deck.name})">Back</p>
-    <p class="navItem">Help</p>
-  </nav>
-
-  <div class = "row">
-  <div class = "quizHeader">
-    <p>Session Score: {{score}}</p>
-  </div>
-  <div class = "quizHeader">
-  </div>
-  <div class = "quizHeader">
-    <p></p>
   </div>
 </div>
 
+<!-- Desktop Nav bar -->
+<nav class="top-bar nav-desktop navbar">
+  <div class = "wrap">
+    <ul class = "row">
+      <li><a class ="navItem" data-ui-sref="index">Home</a></li>
+      <li><a class="navItem" data-ui-sref="show({name: vm.deck.name})">Back</a></li>
+      <li><a class ="navItem">Help</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class = "column">
+
+  <!-- displays session score -->
+  <p class = "score">Session Score: {{score}}</p>
+
+  <!-- Displays the spinning cube! -->
   <canvas ng-click = "vm.startQuiz()" id="myCanvas"></canvas>
 
   <!-- Interface for quiz -->
   <form ng-submit = "vm.answerQuestion(); hideFooter.toggle=true">
+
+    <!-- Instructional message to disappear -->
     <div class= "quizFooter">
-    <p ng-hide="hideFooter.toggle">Enter translation in box below</p>
-    <p ng-show="hideFooter.toggle"></p>
+      <p class ="disappear-note" ng-hide="hideFooter.toggle">Enter answer in translation box below</p>
     </div>
-    <div id="quizBox" class="column">
-    <div id = "questionBox">{{query}}</div>
-    <div class="column">
-      Translation:
-      <input id ="answerBox" ng-model= "userAnswer" type="text" name="name" value="vm.userAnswer" required>
-      <button class = "blueButton" type="submit" name="button">Submit</button>
-    </div>
-  </form>
 
+    <!-- displays item to be translated -->
+    <div class = "quizBox" class="column">
+      <div class= "question-box">{{query}}</div>
+      <div class="column">
+        <p>Translation:</p>
+        <input id ="answerBox" ng-model= "userAnswer" type="text" name="name" value="vm.userAnswer" required>
+        <button class = "blueButton" type="submit" name="button">Submit</button>
+    </form>
+
+    </div>
   </div>
-
-
 </div>
-</body>
-</html>

@@ -15,7 +15,7 @@ function init(){
   //Render Shapes
   var renderer = new THREE.WebGLRenderer({canvas: document.getElementById("myCanvas"), antialias:true});
   //set the default color of the scene
-  renderer.setClearColor(0xF8F8F8);
+  renderer.setClearColor(0x00001A);
   //sets pixel ratio
   renderer.setPixelRatio(window.devicePixelRatio);
   //set size of canvas
