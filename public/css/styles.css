@@ -29,22 +29,6 @@ header{
   background-attachment: fixed;
 }
 
-#trailer{
-  display: inline;
-  font-size: 40px;
-}
-
-#title:hover #trailer{
-  display:inline;
-}
-
-#showNav{
-  height: 50px;
-  width: 100%;
-  background-color: #F8F8F8;
-  border: 1px solid #E9E9E9;
-}
-
 .navItem{
   color: #002A9F;
   margin:0px 40px 0px 40px;

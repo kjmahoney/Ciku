@@ -7,7 +7,7 @@
 }
 
 .page {
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 }
 
 .button{
@@ -22,6 +22,7 @@
   background-color: #F8F8F8;
   border: 0px solid #E9E9E9;
   height: 60px;
+  padding: 0;
 }
 
 .top-bar ul{
@@ -45,13 +46,17 @@
   color: #ECA6FD;
 }
 
-
+.top-bar ul {
+  height: 60px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
 
 /*Home header*/
 .hero{
   background-image: url("http://theplanetd.com/images/Hong-kong-city-skyline-X2.jpg");
   padding: 80px 0px;
-  min-height: 520px;
+  min-height: 575px;
   color: white;
   margin-top: 0px;
   z-index: -1;
@@ -91,24 +96,42 @@ h2{
 .deck{
   display: flex;
   flex-wrap: wrap;
-  margin: 50px 20px;
+  margin: 50px 10px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .deck div{
+  display: flex;
+  align-items: center;
+  justify-content:center;
   border: 1px solid #CCCCCC;
-  border-radius: 15px;
-  height: 30%;
-  width: 30%;
-  margin: 20px 20px;
+  height: 40%;
+  width: 40%;
+  margin: 20px 5px;
   margin-top: 0px;
   font: 20px 'ChunkFiveRegular';
+  min-width: 200px;
+  min-height: 50px;
+  background-color: #CCCCCC;
 }
 
 .deck div a{
   color: black;
-  font: 30px 'ChunkFiveRegular';
+  font: 20px 'ChunkFiveRegular';
 }
 
+.deck div:hover a{
+  font: 20px 'ChunkFiveRegular';
+}
+
+.deck div:hover{
+  background-color: #CCCCCC;
+}
+
+.deck-name{
+  font: 28px 'ChunkFiveRegular';
+}
 
 
 /*  === HOME PAGE === */
@@ -196,7 +219,8 @@ h2{
 
 /* === QUIZ PAGE ===*/
 .score{
-  margin: 20px 0 0 0;
+  margin: 40px 0 0 0;
+  font-family: georgia;
 }
 
 canvas{

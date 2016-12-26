@@ -34,8 +34,8 @@
 
 <div class ="deck row">
 
-    <div class = "small-12 medium-4" data-ng-repeat="deck in vm.decks">
-      <h3 class = "small-12 medium-4"><a data-ui-sref="show({name: deck.name})">{{deck.name}}</a></h3>
+    <div class = "small-12 medium-3" data-ng-repeat="deck in vm.decks" data-ui-sref="show({name: deck.name})">
+      <a class = "deck-name small-12 medium-4">{{deck.name}}</a>
     </div>
 </div>
 </div>
