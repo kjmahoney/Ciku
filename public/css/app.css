@@ -16,6 +16,16 @@
   width: 200px;
 }
 
+.input-box{
+  margin: 15px 0px;
+  width: 200px;
+}
+
+.center{
+  text-align: center;
+}
+
+
 /*Home navbar*/
 .top-bar{
   text-align: center;

@@ -25,7 +25,7 @@
 <form ng-submit="vm.create()">
 
   <div class = "column" ng-if="showField.toggle">
-    <input ng-if="showField.toggle" type="text" ng-model="vm.newDeck.name" placeholder="New Deck Name"/>
+    <input class = "input-box" ng-if="showField.toggle" type="text" ng-model="vm.newDeck.name" placeholder="New Deck Name"/>
     <button class ="blueButton" type="submit" ng-show="showField.toggle">Create Deck</button>
     <p class = "cancel" ng-click="showField.toggle=false">Cancel</p>
   </div>

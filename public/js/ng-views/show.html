@@ -77,10 +77,10 @@
 <p class = "cancel" ng-show="newCard.toggle" ng-click="newCard.toggle=false">Cancel</p>
 
 <!-- create a card -->
-<form ng-submit = "vm.createCard()" ng-show="newCard.toggle">
-  <input type="text" ng-model="original" placeholder="original" required>
-  <input type="text" ng-model="translation" placeholder="translation">
-  <input type="text" ng-model="pronounciation" placeholder="pronounciation">
+<form class = "center" ng-submit = "vm.createCard()" ng-show="newCard.toggle">
+  <input class = "input-box" type="text" ng-model="original" placeholder="original" required>
+  <input class = "input-box" type="text" ng-model="translation" placeholder="translation">
+  <input class = "input-box" type="text" ng-model="pronounciation" placeholder="pronounciation">
   <input class="blueButton" type="submit">
 </form>
 
