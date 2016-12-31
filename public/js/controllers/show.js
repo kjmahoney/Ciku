@@ -38,13 +38,18 @@ function showController($stateParams, DeckFactory, $state, $scope, $index){
       learned: false,
     })
     this.deck.$update({name: $stateParams.name})
-    this.percentLearned()
+    $scope.original = ""
+    $scope.translation = ""
+    $scope.pronounciation = ""
+    $scope.percentage = percentLearned(this.deck)
+    $scope.number = cardsLength(this.deck)
   }
   //Delete card within deck
   this.deleteCard = function(index){
     this.deck.cards.splice(index,1)
     this.deck.$update({name: $stateParams.name})
-    this.percentLearned()
+    $scope.percentage = percentLearned(this.deck)
+    $scope.number = cardsLength(this.deck)
   }
 
   $scope.numberCard = 1

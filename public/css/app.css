@@ -25,6 +25,7 @@
   text-align: center;
 }
 
+/*  === Home === */
 
 /*Home navbar*/
 .top-bar{
@@ -146,12 +147,6 @@ h2{
 .deck-name{
   font: 28px 'ChunkFiveRegular';
 }
-
-
-/*  === HOME PAGE === */
-
-
-
 
 /*  === DECK SHOW PAGE === */
 

@@ -53,21 +53,20 @@
               <input class = 'original-box' ng-if = "editCard.toggle" type="text" ng-model="card.original" placeholder="card.original">
             </div>
 
-            <div class = "show-div small-4 medium-2">
+            <div class = "show-div small-4 medium-2" ng-click ="editCard.toggle = true">
               <p class = "pronounce" ng-if="!showTran.toggle" ng-hide = "editCard.toggle">{{card.pronounciation}}<p>
               <input class = "pronounce-box" type="text" ng-model="card.pronounciation" placeholder="translation" ng-if ="!showTran.toggle && editCard.toggle">
             </div>
 
-            <div class = "show-div small-4 medium-4">
+            <div class = "show-div small-4 medium-4" ng-click ="editCard.toggle = true">
               <p class = "translation" ng-if="!showTran.toggle" ng-hide = "editCard.toggle">{{card.translation}}</p>
               <input class = "translation-box" type="text" ng-model="card.translation" placeholder="pronounciation" ng-if ="!showTran.toggle && editCard.toggle">
             </div>
 
             </div>
-            <input id="submitButton" type="submit" ng-if ="editCard.toggle" value = "Update Card">
-
+            <input class ="button" type="submit" ng-if ="editCard.toggle" value = "Update Card">
+            <input class="button"  ng-if ="editCard.toggle" ng-click ="vm.deleteCard($index)" type="button" name="" value="Delete">
             </form>
-            <input id="submitButton"  ng-if ="editCard.toggle" ng-click ="vm.deleteCard($index)" type="button" name="" value="Delete">
           </div>
     </div>
 </div>
@@ -77,15 +76,13 @@
 <p class = "cancel" ng-show="newCard.toggle" ng-click="newCard.toggle=false">Cancel</p>
 
 <!-- create a card -->
-<form class = "center" ng-submit = "vm.createCard()" ng-show="newCard.toggle">
+<form class = "row center" ng-submit = "vm.createCard()" ng-show="newCard.toggle">
   <input class = "input-box" type="text" ng-model="original" placeholder="original" required>
   <input class = "input-box" type="text" ng-model="translation" placeholder="translation">
   <input class = "input-box" type="text" ng-model="pronounciation" placeholder="pronounciation">
-  <input class="blueButton" type="submit">
+  <input class="button" type="submit">
 </form>
 
 <!-- delete the deck -->
 <button class="button alert show-card-button-box" data-ng-click="vm.destroy()">Delete Deck</button>
 </div>
-
-<!-- back to index -->
