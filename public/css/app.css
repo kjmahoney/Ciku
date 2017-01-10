@@ -199,7 +199,7 @@ h2{
 
 .show-div .original{
   font-size: 24px;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: times, arial;
   line-height: 40px;
   padding-top: 0;
   padding-bottom: 0;
@@ -211,7 +211,7 @@ h2{
   line-height: 40px;
   padding-top: 0;
   padding-bottom: 0;
-  color: blue;
+  color: rgba(0,0,0,.5);
 }
 
 .show-div .translation{
@@ -220,7 +220,7 @@ h2{
   line-height: 40px;
   padding-top: 0;
   padding-bottom: 0;
-  color: red;
+  color: rgba(0,0,0,.8);
 }
 
 .show-card-button-box{
