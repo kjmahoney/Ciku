@@ -48,20 +48,20 @@
       <div class="column">
 
           <form ng-submit = "vm.updateCard($index, card)">
-            <div class = "card row">
+            <div class = "card row small-6 medium-12">
 
               {{$index + 1}}:
-            <div class = "show-div small-4 medium-6">
+            <div class = "show-div small-2 medium-6">
               <p class = "original" ng-click ="editCard.toggle = true"  ng-hide = "editCard.toggle" >{{card.original}}</p>
               <input class = 'original-box' ng-if = "editCard.toggle" type="text" ng-model="card.original" placeholder="card.original">
             </div>
 
-            <div class = "show-div small-4 medium-2" ng-click ="editCard.toggle = true">
+            <div class = "show-div small-2 medium-2" ng-click ="editCard.toggle = true">
               <p class = "pronounce" ng-if="!showTran.toggle" ng-hide = "editCard.toggle">{{card.pronounciation}}<p>
               <input class = "pronounce-box" type="text" ng-model="card.pronounciation" placeholder="translation" ng-if ="!showTran.toggle && editCard.toggle">
             </div>
 
-            <div class = "show-div small-4 medium-4" ng-click ="editCard.toggle = true">
+            <div class = "show-div small-2 medium-4" ng-click ="editCard.toggle = true">
               <p class = "translation" ng-if="!showTran.toggle" ng-hide = "editCard.toggle">{{card.translation}}</p>
               <input class = "translation-box" type="text" ng-model="card.translation" placeholder="pronounciation" ng-if ="!showTran.toggle && editCard.toggle">
             </div>
