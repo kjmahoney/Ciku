@@ -11,8 +11,12 @@
   <div class = "wrap">
       <ul class = "row">
         <li><a class ="nav-item home-link" href="#">Welcome</a></li>
-        <li><a class ="nav-item portfolio-link" href="#">Help</a></li>
+        <li><a class ="nav-item portfolio-link" ng-click = "showHelp.toggle=true">Help</a></li>
       </ul>
+      <div class = "help-div" ng-if = "showHelp.toggle">
+        <p>Add a new deck or click an existing one to view its cards.<a ng-click = "showHelp.toggle=false"> Hide</a></p>
+      </div>
+
   </div>
 </nav>
 

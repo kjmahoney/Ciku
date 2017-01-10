@@ -11,8 +11,11 @@
       <ul class = "row">
         <li><a class ="navItem" data-ui-sref="index">Home</a></li>
         <li><a class ="navItem" data-ui-sref="quiz({name: vm.deck.name})">Quiz!</a></li>
-        <li><a class ="navItem">Help</a></li>
+        <li><a class ="navItem portfolio-link" ng-click = "showHelp.toggle=true">Help</a></li>
       </ul>
+      <div class = "help-div" ng-if = "showHelp.toggle">
+        <p>Add a new card to the deck, or click quiz to test yourself on the deck!<a class="hide-help" ng-click = "showHelp.toggle=false"> Hide</a></p>
+      </div>
   </div>
 </nav>
 

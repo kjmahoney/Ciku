@@ -18,5 +18,6 @@ function indexController($state, DeckFactory){
 
   //constant variable
   showField = false
+  showHelp = false
 
 }
