@@ -21,7 +21,7 @@ function init(){
   //sets pixel ratio
   renderer.setPixelRatio(window.devicePixelRatio);
   //set size of canvas
-  renderer.setSize(500,300);
+  renderer.setSize(w*.6,w*.3);
 
 
   //parameters: Field of view, aspect ratio, near, far = tihings too close or far no longer re render
