@@ -108,7 +108,7 @@ h2{
 .deck{
   display: flex;
   flex-wrap: wrap;
-  margin: 50px 10px;
+  margin: 25px 10px;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -244,4 +244,36 @@ canvas{
 .question-box{
   font-size: 36px;
   font-family: times, serif;
+}
+
+
+/* === MEDIA QUERIES ===*/
+@media (max-width: 420px) {
+  .top-bar ul li {
+    margin: 0px 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .top-bar ul li {
+    margin: 0px 0px;
+  }
+}
+
+@media (max-width: 300px) {
+  .top-bar ul li {
+    margin: 0px -20px;
+  }
+}
+
+@media (max-width: 250px) {
+  .top-bar ul li {
+    margin: 0px -30px;
+  }
+}
+
+@media (max-width: 210px) {
+  .top-bar ul li {
+    margin: 0px -35px;
+  }
 }

@@ -10,7 +10,7 @@
 <nav class="top-bar nav-desktop navbar">
   <div class = "wrap">
       <ul class = "row">
-        <li><a class ="nav-item home-link" href="#">Welcome</a></li>
+        <li><a class ="nav-item home-link">Welcome</a></li>
         <li><a class ="nav-item portfolio-link" ng-click = "showHelp.toggle=true">Help</a></li>
       </ul>
       <div class = "help-div" ng-if = "showHelp.toggle">
@@ -25,7 +25,7 @@
 <div class = "wrap">
 <h2>My Decks</h2>
 
-<button class ="button" ng-click="showField.toggle=true" ng-hide="showField.toggle">Add Deck</button>
+<button class ="button small-12 medium-3" ng-click="showField.toggle=true" ng-hide="showField.toggle">Add Deck</button>
 <form ng-submit="vm.create()">
 
   <div class = "column" ng-if="showField.toggle">
