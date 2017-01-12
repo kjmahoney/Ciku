@@ -1,7 +1,7 @@
 <div class ="hero hero-show-quiz">
   <div class = "wrap">
     <div class="row">
-      <h2>Ciku<span class ="chinese-title">词库</span><span>Study Chinese</span></h2>
+      <h2>Ciku<span class ="chinese-title">词库</span><span>Learn Chinese</span></h2>
     </div>
   </div>
 </div>
@@ -25,7 +25,7 @@
     <!-- Deck Header -->
     <h2 class="deck-title" ng-hide="editTitle.toggle" ng-click="editTitle.toggle=true">{{vm.deck.name}}</h2>
     <!-- Box to edit Deck Header -->
-    <input id="deckNameBox" ng-if="editTitle.toggle" type="text" ng-model="vm.deck.name" placeholder="Name"/>
+    <input class="deck-name-box" ng-if="editTitle.toggle" type="text" ng-model="vm.deck.name" placeholder="Name"/>
     <!-- Submit changes to Deck Header -->
     <p id="editDeckButton" ng-if="editTitle.toggle" ng-click="vm.updateDeck(); editTitle.toggle=false">Submit</p>
   </div>
@@ -53,17 +53,17 @@
               {{$index + 1}}:
             <div class = "show-div small-2 medium-6">
               <p class = "original" ng-click ="editCard.toggle = true"  ng-hide = "editCard.toggle" >{{card.original}}</p>
-              <input class = 'original-box' ng-if = "editCard.toggle" type="text" ng-model="card.original" placeholder="card.original">
+              <input class = 'original edit-box' ng-if = "editCard.toggle" type="text" ng-model="card.original" placeholder="card.original">
             </div>
 
             <div class = "show-div small-2 medium-2" ng-click ="editCard.toggle = true">
               <p class = "pronounce" ng-if="!showTran.toggle" ng-hide = "editCard.toggle">{{card.pronounciation}}<p>
-              <input class = "pronounce-box" type="text" ng-model="card.pronounciation" placeholder="translation" ng-if ="!showTran.toggle && editCard.toggle">
+              <input class = "pronounce edit-box" type="text" ng-model="card.pronounciation" placeholder="translation" ng-if ="!showTran.toggle && editCard.toggle">
             </div>
 
             <div class = "show-div small-2 medium-4" ng-click ="editCard.toggle = true">
               <p class = "translation" ng-if="!showTran.toggle" ng-hide = "editCard.toggle">{{card.translation}}</p>
-              <input class = "translation-box" type="text" ng-model="card.translation" placeholder="pronounciation" ng-if ="!showTran.toggle && editCard.toggle">
+              <input class = "translation edit-box" type="text" ng-model="card.translation" placeholder="pronounciation" ng-if ="!showTran.toggle && editCard.toggle">
             </div>
 
             </div>

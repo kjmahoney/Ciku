@@ -2,7 +2,7 @@
 <div class ="hero hero-show-quiz">
   <div class = "wrap">
     <div class="row">
-      <h2>Ciku<span class ="chinese-title">词库</span><span>Study Chinese</span></h2>
+      <h2>Ciku<span class ="chinese-title">词库</span><span>Learn Chinese</span></h2>
     </div>
   </div>
 </div>
@@ -24,6 +24,7 @@
 <div class = "column page">
 
   <!-- displays session score -->
+
   <p class = "score">Session Score: {{score}}</p>
 
   <!-- Displays the spinning cube! -->
@@ -35,13 +36,15 @@
     <!-- Instructional message to disappear -->
     <div class= "quizFooter">
       <p class ="disappear-note" ng-hide="hideFooter.toggle">Enter answer in box below</p>
+      <p class = "message">{{message}}</p>
     </div>
 
     <!-- displays item to be translated -->
     <div class = "quizBox" class="column">
+
       <div class= "question-box">{{query}}</div>
       <div class="column">
-        <input class ="answer-box" ng-model= "userAnswer" type="text" name="name" value="vm.userAnswer" required>
+        <input class ="answer-box" ng-model= "userAnswer" type="text" name="name" value="vm.userAnswer" required autocomplete="off">
         <button class = "button" type="submit" name="button">Submit</button>
     </form>
 

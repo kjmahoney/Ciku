@@ -13,6 +13,12 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
   init()
   //set score to zero
   $scope.score = 0
+  $scope.message = ""
+
+  function clearMessage(){
+    $scope.message = ""
+  }
+
   //get deck from database
   this.deck = DeckFactory.get({name: $stateParams.name}, (res)=>{
     $scope.percentage = percentLearned(this.deck)
@@ -32,17 +38,16 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
 
 
   this.answerQuestion = function(){
-
-    function returnColor(){
-      renderer.setClearColor(0x00001A);
-    }
     //if user input is correct
     if ($scope.userAnswer.toUpperCase() == $scope.actualAnswer.toUpperCase()){
-      //increase session score
 
       // renderer.setClearColor(0x186DF1);
       // window.setTimeout(returnColor, 200);
 
+      //display message to user
+      $scope.message = "Correct!"
+      window.setTimeout(clearMessage, 100);
+      //increase session score
       $scope.score += 1
       //increase speed of cube
       increaseSpeed()
@@ -51,6 +56,9 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
     }else{
       // renderer.setClearColor(0x832123);
       // window.setTimeout(returnColor, 200);
+
+      $scope.message = "Incorrect : ("
+      window.setTimeout(clearMessage, 100);
 
       //slow down the cube
       decreaseSpeed()
@@ -78,4 +86,5 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
     }
   }
   hideFooter=false
+  correctMessage = false
 }

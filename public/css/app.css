@@ -25,7 +25,9 @@
   text-align: center;
 }
 
-
+.edit-box{
+  text-align: center;
+}
 /*  === Home === */
 
 /*Home navbar*/
@@ -87,7 +89,7 @@
 
 .hero span{
   font-size: 20px;
-  margin:10px 0px -10px 20px;
+  margin:10px 0px -10px 5px;
   opacity: .8;
 }
 
@@ -152,6 +154,7 @@ h2{
 .deck-title{
   margin: 50px 0px 10px 0px;
   color: #002F9C;
+  font-size: 50px;
 }
 
 .deck-title:hover{
@@ -164,6 +167,15 @@ h2{
   color: #002F9C;
 }
 
+.deck-name-box{
+  font-size: 50px;
+  margin: 50px 0px 10px 0px;
+  height: 50px;
+  color: #002F9C;
+  width: 50%;
+  text-align: center;
+  font-family: 'ChunkFiveRegular';
+}
 
 .stat-field{
   margin-top: 0px;
@@ -222,6 +234,7 @@ h2{
   color: rgba(0,0,0,.8);
 }
 
+
 .show-card-button-box{
   margin-top: 20px;
 }
@@ -244,6 +257,12 @@ canvas{
 .question-box{
   font-size: 48px;
   font-family: times, serif;
+}
+
+.quizFooter .message{
+  display: inline;
+  margin: 0;
+  font-size: 20px;
 }
 
 
