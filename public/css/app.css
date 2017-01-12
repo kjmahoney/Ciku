@@ -97,9 +97,9 @@
 }
 
 h2{
-  font: 60px 'ChunkFiveRegular';
+  font: 50px 'ChunkFiveRegular';
   color: black;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 
@@ -132,12 +132,13 @@ h2{
 
 .deck div a{
   color: black;
-  font: 20px 'ChunkFiveRegular';
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;;
+
 }
 
 .deck div:hover a{
-  font: 20px 'ChunkFiveRegular';
-
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;;
+  font-size: 24px;
 }
 
 .deck div:hover{
@@ -145,9 +146,6 @@ h2{
   transition-duration: 700ms;
 }
 
-.deck-name{
-  font: 28px 'ChunkFiveRegular';
-}
 
 /*  === DECK SHOW PAGE === */
 
@@ -171,6 +169,7 @@ h2{
   margin-top: 0px;
   margin-bottom: 40px;
   font-size: 20px;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 }
 
 .tran-button{
@@ -207,7 +206,7 @@ h2{
 
 .show-div .pronounce{
   font-size: 16px;
-  font-family: georgia;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;;
   line-height: 40px;
   padding-top: 0;
   padding-bottom: 0;
@@ -216,7 +215,7 @@ h2{
 
 .show-div .translation{
   font-size: 20px;
-  font-family: georgia;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;;
   line-height: 40px;
   padding-top: 0;
   padding-bottom: 0;
@@ -229,8 +228,9 @@ h2{
 
 /* === QUIZ PAGE ===*/
 .score{
+  font-size: 26px;
   margin: 40px 0 0 0;
-  font-family: georgia;
+  font-family: 'ChunkFiveRegular';
 }
 
 canvas{
