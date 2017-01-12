@@ -27,7 +27,7 @@
     <!-- Box to edit Deck Header -->
     <input class="deck-name-box" ng-if="editTitle.toggle" type="text" ng-model="vm.deck.name" placeholder="Name"/>
     <!-- Submit changes to Deck Header -->
-    <p id="editDeckButton" ng-if="editTitle.toggle" ng-click="vm.updateDeck(); editTitle.toggle=false">Submit</p>
+    <p class="edit-deck-button" ng-if="editTitle.toggle" ng-click="vm.updateDeck(); editTitle.toggle=false">Submit</p>
   </div>
 
   <div class="stat-field" ng-hide="editTitle.toggle">{{number}} cards {{percentage}}% learned
@@ -75,7 +75,7 @@
 </div>
 
 <div class = "wrap page">
-<button class="button show-card-button-box" ng-click="newCard.toggle=true" ng-hide="newCard.toggle">New Card</button>
+<button class="blue button show-card-button-box" ng-click="newCard.toggle=true" ng-hide="newCard.toggle">New Card</button>
 <p class = "cancel" ng-show="newCard.toggle" ng-click="newCard.toggle=false">Cancel</p>
 
 <!-- create a card -->

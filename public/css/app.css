@@ -12,8 +12,12 @@
 
 .button{
   margin: 15px 0px;
-  background-color: #002F9C;
+  background-color: #180C24;
   width: 200px;
+}
+
+.blue{
+  background-color: #0281CF;
 }
 
 .input-box{
@@ -27,6 +31,16 @@
 
 .edit-box{
   text-align: center;
+}
+
+.navItem{
+  color: black;
+  margin:0px 40px 0px 40px;
+  opacity: 1px;
+}
+
+.navItem:hover{
+  opacity: .7;
 }
 /*  === Home === */
 
@@ -53,11 +67,12 @@
 }
 
 .top-bar a{
-  color: #3A2047;
+  color: black;
 }
 
 .top-bar a:hover{
-  color: #ECA6FD;
+  opacity: .4;
+  color: #002A9F;
 }
 
 .top-bar ul {
@@ -100,7 +115,7 @@
 
 h2{
   font: 50px 'ChunkFiveRegular';
-  color: black;
+  color: #002A9F;
   margin-top: 20px;
 }
 
@@ -161,6 +176,9 @@ h2{
   opacity: .5;
 }
 
+.edit-deck-button:hover {
+  opacity: .5;
+}
 
 .deck-name-div{
   margin: 20px 0px 40px 0px;
