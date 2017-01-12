@@ -252,11 +252,23 @@ canvas{
   .top-bar ul li {
     margin: 0px 10px;
   }
+  .hero h2{
+    font-size: 60px;
+  }
 }
 
 @media (max-width: 360px) {
   .top-bar ul li {
     margin: 0px 0px;
+  }
+  .hero h2{
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 328px) {
+  .hero h2{
+    font-size: 32px;
   }
 }
 
@@ -270,6 +282,7 @@ canvas{
   .top-bar ul li {
     margin: 0px -30px;
   }
+
 }
 
 @media (max-width: 210px) {
