@@ -115,7 +115,7 @@
 
 h2{
   font: 50px 'ChunkFiveRegular';
-  color: #002A9F;
+  color: #331845;
   margin-top: 20px;
 }
 
@@ -148,9 +148,8 @@ h2{
 
 
 .deck div a{
-  color: black;
+  color: white;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;;
-
 }
 
 .deck div:hover a{
