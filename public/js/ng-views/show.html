@@ -79,11 +79,11 @@
 <p class = "cancel" ng-show="newCard.toggle" ng-click="newCard.toggle=false">Cancel</p>
 
 <!-- create a card -->
-<form class = "row center" ng-submit = "vm.createCard()" ng-show="newCard.toggle">
-  <input class = "input-box" type="text" ng-model="original" placeholder="original" required>
-  <input class = "input-box" type="text" ng-model="translation" placeholder="translation">
-  <input class = "input-box" type="text" ng-model="pronounciation" placeholder="pronounciation">
-  <input class="button" type="submit">
+<form class = "column center" ng-submit = "vm.createCard()" ng-show="newCard.toggle">
+  <input class = "input-box small-12 medium-3" type="text" ng-model="original" placeholder="original" required>
+  <input class = "input-box small-12 medium-3" type="text" ng-model="pronounciation" placeholder="pronounciation">
+  <input class = "input-box small-12 medium-3" type="text" ng-model="translation" placeholder="translation">
+  <input class="button small-12 medium-3" type="submit" value ="Add Card">
 </form>
 
 <!-- delete the deck -->
