@@ -30,16 +30,28 @@ function quizController($stateParams, DeckFactory, $state, $scope, $index){
     $scope.actualAnswer = question.translation
   }
 
+
   this.answerQuestion = function(){
-    //if user input is that same as the translation
+
+    function returnColor(){
+      renderer.setClearColor(0x00001A);
+    }
+    //if user input is correct
     if ($scope.userAnswer.toUpperCase() == $scope.actualAnswer.toUpperCase()){
       //increase session score
+
+      // renderer.setClearColor(0x186DF1);
+      // window.setTimeout(returnColor, 200);
+
       $scope.score += 1
       //increase speed of cube
       increaseSpeed()
       //set card to learned in database
       this.deck.cards[this.deck.cards.indexOf(question)].learned = true
     }else{
+      // renderer.setClearColor(0x832123);
+      // window.setTimeout(returnColor, 200);
+
       //slow down the cube
       decreaseSpeed()
       //Set card to unlearned in database
