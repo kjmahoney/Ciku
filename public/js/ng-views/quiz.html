@@ -36,7 +36,7 @@
     <!-- Instructional message to disappear -->
     <div class= "quizFooter">
       <p class ="disappear-note" ng-hide="hideFooter.toggle">Enter answer in box below</p>
-      <p class = "message">{{message}}</p>
+      <p class = "message" ng-show="hideFooter.toggle">{{message}}</p>
     </div>
 
     <!-- displays item to be translated -->

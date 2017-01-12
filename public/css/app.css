@@ -273,8 +273,9 @@ canvas{
 }
 
 .quizFooter .message{
-  display: inline;
-  margin: 0;
+  display: block;
+  height: 10px;
+  margin: 0 0 10px 0;
   font-size: 20px;
 }
 

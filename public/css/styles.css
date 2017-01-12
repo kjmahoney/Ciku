@@ -29,16 +29,9 @@ header{
   background-attachment: fixed;
 }
 
-.navItem{
-  color: #002A9F;
-  margin:0px 40px 0px 40px;
-  opacity: 1px;
-}
 
-.navItem:hover{
-  color: #22C3E9;
-  margin:0px 40px 0px 40px;
-}
+
+
 
 #title{
   color: white;
